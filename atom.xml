@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangyu756897669.github.io/"/>
-  <updated>2020-06-18T18:30:34.909Z</updated>
+  <updated>2020-06-18T19:11:44.929Z</updated>
   <id>https://zhangyu756897669.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>技能-Hive-SQL学习</title>
     <link href="https://zhangyu756897669.github.io/2020/06/19/hive-sql-zhi-shi-dian-zong-jie/"/>
     <id>https://zhangyu756897669.github.io/2020/06/19/hive-sql-zhi-shi-dian-zong-jie/</id>
-    <published>2020-06-18T18:29:44.434Z</published>
-    <updated>2020-06-18T18:30:34.909Z</updated>
+    <published>2020-06-18T16:00:00.000Z</published>
+    <updated>2020-06-18T19:11:44.929Z</updated>
     
     <summary type="html">
     
@@ -36,6 +36,10 @@
     </summary>
     
     
+      <category term="SQL" scheme="https://zhangyu756897669.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL" scheme="https://zhangyu756897669.github.io/tags/SQL/"/>
     
   </entry>
   
@@ -44,7 +48,7 @@
     <link href="https://zhangyu756897669.github.io/2018/09/07/hello-world/"/>
     <id>https://zhangyu756897669.github.io/2018/09/07/hello-world/</id>
     <published>2018-09-07T01:25:00.000Z</published>
-    <updated>2020-06-18T18:53:44.656Z</updated>
+    <updated>2020-06-18T19:11:19.659Z</updated>
     
     <summary type="html">
     
