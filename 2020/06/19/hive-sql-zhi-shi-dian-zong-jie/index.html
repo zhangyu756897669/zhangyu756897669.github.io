@@ -265,7 +265,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/source/images/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://brandgenetics.com/wp-content/uploads/2020/03/Hive-banner_26032020_revised-with-safe-space_option-2--1100x400.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -280,10 +280,105 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -494,6 +589,122 @@
 <li>数学运算符与关系运算符</li>
 </ul>
 <p><a href="https://www.notion.so/055703aab4474fd18a54d7bb0f0bd42d" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加法</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>与</td>
+</tr>
+<tr>
+<td>| 或</td>
+<td></td>
+</tr>
+<tr>
+<td>^</td>
+<td>异或</td>
+</tr>
+<tr>
+<td>~</td>
+<td>取反</td>
+</tr>
+<tr>
+<td><strong>操作符</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr>
+<td>A=B</td>
+<td>如果A=B，则返回True,否则返回False</td>
+</tr>
+<tr>
+<td>A&lt;=&gt;B</td>
+<td>如果A和B都为NULL，则返回True,其他的和等号操作结果一致，如果任意为Null,则结果为null</td>
+</tr>
+<tr>
+<td>A&lt;&gt;B,A!=B</td>
+<td>A或B为Null, 则返回Null,如果A不等于B，则返回True,否则返回False</td>
+</tr>
+<tr>
+<td>A&lt;B</td>
+<td>–</td>
+</tr>
+<tr>
+<td>A&lt;=B</td>
+<td>–</td>
+</tr>
+<tr>
+<td>A&gt;B</td>
+<td>–</td>
+</tr>
+<tr>
+<td>A&gt;=b</td>
+<td>–</td>
+</tr>
+<tr>
+<td>A[not] between  B and C</td>
+<td>—</td>
+</tr>
+<tr>
+<td>A is null</td>
+<td>—</td>
+</tr>
+<tr>
+<td>A is not null</td>
+<td>—</td>
+</tr>
+<tr>
+<td>in</td>
+<td>–</td>
+</tr>
+<tr>
+<td>A [NOT] like B</td>
+<td>–</td>
+</tr>
+<tr>
+<td>A rlike B, A REGEXP B</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>逻辑运算</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr>
+<td>and</td>
+<td>—</td>
+</tr>
+<tr>
+<td>or</td>
+<td>–</td>
+</tr>
+<tr>
+<td>not</td>
+<td>—</td>
+</tr>
+</tbody></table>
 <ul>
 <li>like、rlike</li>
 </ul>
@@ -502,6 +713,54 @@
 
 <span class="token keyword">select</span> name<span class="token punctuation">,</span> address<span class="token punctuation">.</span>street <span class="token keyword">from</span> employeeswhere address<span class="token punctuation">.</span>street <span class="token operator">like</span> <span class="token string">'%beijing%'</span> <span class="token operator">or</span> address<span class="token punctuation">.</span>street <span class="token operator">like</span> <span class="token string">'%shanghai%'</span><span class="token punctuation">;</span></code></pre>
 <p><a href="https://www.notion.so/18d9ebe5a2be4260a857afd2a13a041f" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%</td>
+<td>匹配0个或任意多个字符</td>
+</tr>
+<tr>
+<td>_</td>
+<td>匹配任意一个字符</td>
+</tr>
+<tr>
+<td>escape</td>
+<td>转义字符，可匹配%和<em>。如SELECT * FROM table_name WHERE column_name LIKE ‘/%/</em>%_’ ESCAPE’/‘</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配任意单个字 符</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配0个或多个前一个得到的字符</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>含有任意一个[]内的字符，[ab]*可匹配空串、a、b、或者由任意个a和b组成的字符串。</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配开头，如^s匹配以s或者S开头的字符串</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配结尾，如s$匹配以s结尾的字符串。</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>匹配前一个字符反复n次。</td>
+</tr>
+</tbody></table>
 <h2 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--- 对结果进行分类</span>
 
 <span class="token keyword">select</span>     year<span class="token punctuation">(</span>ymd<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>price_close<span class="token punctuation">)</span> 
@@ -625,6 +884,78 @@
 <span class="token keyword">from</span>
     <span class="token number">a1</span></code></pre>
 <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><p><a href="https://www.notion.so/95e5f3e703a74864afad9be85a77035a" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>count()</td>
+<td>个数统计函数</td>
+</tr>
+<tr>
+<td>count(distinct  )</td>
+<td>统计去重之后的个数</td>
+</tr>
+<tr>
+<td>sum()</td>
+<td>求和</td>
+</tr>
+<tr>
+<td>sum(distinct )</td>
+<td>去重之后的和</td>
+</tr>
+<tr>
+<td>avg()</td>
+<td>平均值</td>
+</tr>
+<tr>
+<td>avg(distinct)</td>
+<td>去重之后的平均值</td>
+</tr>
+<tr>
+<td>min()</td>
+<td>最小值</td>
+</tr>
+<tr>
+<td>max()</td>
+<td>最大值</td>
+</tr>
+<tr>
+<td>corr(A, B)</td>
+<td>相关系数</td>
+</tr>
+<tr>
+<td>var_pop()</td>
+<td>方差</td>
+</tr>
+<tr>
+<td>var_samp()</td>
+<td>样本方差</td>
+</tr>
+<tr>
+<td>stddev_pop()</td>
+<td>标准偏差</td>
+</tr>
+<tr>
+<td>stddev_samp()</td>
+<td>标准样本偏差</td>
+</tr>
+<tr>
+<td>covar_pop(A, B)</td>
+<td>协方差</td>
+</tr>
+<tr>
+<td>covar_samp(A, B)</td>
+<td>样本协方差</td>
+</tr>
+<tr>
+<td>RAND()</td>
+<td>随机数</td>
+</tr>
+</tbody></table>
 <ul>
 <li>count(1)、count(*)、count(column) 之间的区别</li>
 <li>执行范围上： count(*) 和 count (1)  都包含了 对NULL的统计。 count(列名)统计时不包含NULL值。</li>
@@ -632,6 +963,110 @@
 </ul>
 <hr>
 <h2 id="时间函数"><a href="#时间函数" class="headerlink" title="时间函数"></a>时间函数</h2><p><a href="https://www.notion.so/14a471014a4b4f6995852df51f317e2b" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>定义</th>
+<th>语句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NOW ( )</td>
+<td>当前时间</td>
+<td>select now()</td>
+</tr>
+<tr>
+<td>extract()</td>
+<td>抽取具体的年、月、日</td>
+<td></td>
+</tr>
+<tr>
+<td>date()</td>
+<td>返回时间的日期部分</td>
+<td></td>
+</tr>
+<tr>
+<td>year()</td>
+<td>返回时间的年份</td>
+<td></td>
+</tr>
+<tr>
+<td>month()</td>
+<td>返回时间的月份</td>
+<td></td>
+</tr>
+<tr>
+<td>day()</td>
+<td>返回日期的天</td>
+<td></td>
+</tr>
+<tr>
+<td>hour()</td>
+<td>返回时间的小时</td>
+<td></td>
+</tr>
+<tr>
+<td>minute()</td>
+<td>返回时间的分钟</td>
+<td></td>
+</tr>
+<tr>
+<td>second()</td>
+<td>返回时间的秒</td>
+<td></td>
+</tr>
+<tr>
+<td>week ()</td>
+<td>第几周</td>
+<td></td>
+</tr>
+<tr>
+<td>dayofweek()</td>
+<td>返回星期几，1为星期天</td>
+<td></td>
+</tr>
+<tr>
+<td>dayofyear()</td>
+<td>一年中的第几天</td>
+<td></td>
+</tr>
+<tr>
+<td>sec_to_time ( )</td>
+<td>秒数转成时间</td>
+<td></td>
+</tr>
+<tr>
+<td>date_add()</td>
+<td>时间相加</td>
+<td>date_add(dt,interval 1 day )</td>
+</tr>
+<tr>
+<td>date_sub(date,INTERVAL expr（时间间隔） type（时间类型，天、月、年）)</td>
+<td>时间相减</td>
+<td>date_sub(‘2018-05-01’,interval -1 year)</td>
+</tr>
+<tr>
+<td>datediff()</td>
+<td>时间的差值</td>
+<td></td>
+</tr>
+<tr>
+<td>date_format()</td>
+<td>输出指定时间格式</td>
+<td>date_format(hit_date, “%Y-%m-%d)</td>
+</tr>
+<tr>
+<td>datename()</td>
+<td>返回日期部分的参数</td>
+<td></td>
+</tr>
+<tr>
+<td>datepart()</td>
+<td>返回日期、时间的单独部分</td>
+<td></td>
+</tr>
+</tbody></table>
 <h3 id="求留存率"><a href="#求留存率" class="headerlink" title="求留存率"></a>求留存率</h3><ul>
 <li>datediff-求留存率</li>
 </ul>
@@ -861,6 +1296,45 @@
 <li>统计各部门男女分别有多少人</li>
 </ul>
 <p><a href="https://www.notion.so/9b866f26284c4b7ba4592497f75c1c75" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>部门</th>
+<th>性别</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>甲</td>
+<td>A</td>
+<td>男</td>
+</tr>
+<tr>
+<td>乙</td>
+<td>A</td>
+<td>男</td>
+</tr>
+<tr>
+<td>丙</td>
+<td>B</td>
+<td>女</td>
+</tr>
+<tr>
+<td>丁</td>
+<td>A</td>
+<td>女</td>
+</tr>
+<tr>
+<td>张</td>
+<td>B</td>
+<td>男</td>
+</tr>
+<tr>
+<td>赵</td>
+<td>B</td>
+<td>女</td>
+</tr>
+</tbody></table>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
 <span class="token string">'部门'</span><span class="token punctuation">,</span>
 <span class="token function">sum</span><span class="token punctuation">(</span> <span class="token keyword">case</span> <span class="token keyword">when</span> 性别 <span class="token operator">=</span> <span class="token string">'男'</span> <span class="token keyword">then</span> <span class="token number">1</span>  <span class="token keyword">else</span> <span class="token boolean">null</span> <span class="token keyword">end</span> <span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'男'</span><span class="token punctuation">,</span>
@@ -920,8 +1394,82 @@ month<span class="token punctuation">(</span>hit_date <span class="token punctua
 <li>多行转多列</li>
 </ul>
 <p><a href="https://www.notion.so/3be2808d46744e2b917a69f302de1ebd" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>年</th>
+<th>季度</th>
+<th>销售量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1991</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>1991</td>
+<td>2</td>
+<td>12</td>
+</tr>
+<tr>
+<td>1991</td>
+<td>3</td>
+<td>13</td>
+</tr>
+<tr>
+<td>1991</td>
+<td>4</td>
+<td>14</td>
+</tr>
+<tr>
+<td>1992</td>
+<td>1</td>
+<td>21</td>
+</tr>
+<tr>
+<td>1992</td>
+<td>2</td>
+<td>22</td>
+</tr>
+<tr>
+<td>1992</td>
+<td>3</td>
+<td>23</td>
+</tr>
+<tr>
+<td>1992</td>
+<td>4</td>
+<td>24</td>
+</tr>
+</tbody></table>
 <p>查询结果如下：</p>
 <p><a href="https://www.notion.so/ed9dc647bf534c56aee4f6eed8c3db34" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>年</th>
+<th>一季度</th>
+<th>二季度</th>
+<th>三季度</th>
+<th>四季度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1991</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+</tr>
+<tr>
+<td>1992</td>
+<td>21</td>
+<td>22</td>
+<td>23</td>
+<td>24</td>
+</tr>
+</tbody></table>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
     年<span class="token punctuation">,</span>
 <span class="token function">sum</span><span class="token punctuation">(</span> <span class="token keyword">case</span> <span class="token keyword">when</span>  季度 <span class="token operator">=</span> <span class="token number">1</span> <span class="token keyword">then</span> 销售量  <span class="token keyword">else</span> <span class="token boolean">null</span> <span class="token keyword">end</span> <span class="token punctuation">)</span> 一季度<span class="token punctuation">,</span>
@@ -938,6 +1486,26 @@ page
 <li>多行转单列</li>
 </ul>
 <p><a href="https://www.notion.so/31f0fa2500fa437bb9ac50fe00486aec" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>省-城市</th>
+<th>uv</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>河北省-保定</td>
+<td>11189</td>
+</tr>
+<tr>
+<td>山西省-阳泉市</td>
+<td>13</td>
+</tr>
+<tr>
+<td>河南省-信阳</td>
+<td>7462</td>
+</tr>
+</tbody></table>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
     concat_ws<span class="token punctuation">(</span> <span class="token string">'-'</span><span class="token punctuation">,</span> province<span class="token punctuation">,</span> city<span class="token punctuation">)</span> <span class="token punctuation">,</span>
     <span class="token function">count</span><span class="token punctuation">(</span> <span class="token keyword">distinct</span> user_account<span class="token punctuation">)</span> <span class="token keyword">as</span> uv 
@@ -959,8 +1527,62 @@ hit_date <span class="token operator">=</span> <span class="token string">'2020-
 <li>多行转单列-复杂</li>
 </ul>
 <p><a href="https://www.notion.so/85784ade5eb74ae4bf489346487a3d06" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>contellation</th>
+<th>blood_type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>孙悟空</td>
+<td>白羊座</td>
+<td>A</td>
+</tr>
+<tr>
+<td>猪八戒</td>
+<td>射手座</td>
+<td>A</td>
+</tr>
+<tr>
+<td>宋宋</td>
+<td>白羊座</td>
+<td>B</td>
+</tr>
+<tr>
+<td>唐僧</td>
+<td>白羊座</td>
+<td>A</td>
+</tr>
+<tr>
+<td>张帅</td>
+<td>射手座</td>
+<td>A</td>
+</tr>
+</tbody></table>
 <p>把星座和血型一样的人归类到一起：</p>
 <p><a href="https://www.notion.so/c5a39428e3a844b7a8e3c51a6ad89e28" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>。。。</th>
+<th>。。。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>射手座,A</td>
+<td>猪八戒\张帅</td>
+</tr>
+<tr>
+<td>白羊座，A</td>
+<td>孙悟空\唐僧</td>
+</tr>
+<tr>
+<td>白羊座，B</td>
+<td>宋</td>
+</tr>
+</tbody></table>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
 con_blood<span class="token punctuation">,</span>
 concat_ws <span class="token punctuation">(</span><span class="token string">"\"</span><span class="token punctuation">,</span> collect_set<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -1062,9 +1684,59 @@ lateral <span class="token keyword">view</span> explode<span class="token punctu
 <ul>
 <li>需求1</li>
 </ul>
-<p><a href="https://www.notion.so/0fb30bcbf41d4f0d849761ad44b8e5d2" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>movie</th>
+<th>category</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>《疑犯追踪》</td>
+<td>悬疑,动作,科幻,剧情</td>
+</tr>
+<tr>
+<td>《lie to me》</td>
+<td>警匪,动作,心理</td>
+</tr>
+</tbody></table>
 <p>要求：</p>
-<p><a href="https://www.notion.so/482c74f2e4974c17a778347724389337" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>movie</th>
+<th>category</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>《疑犯追踪》</td>
+<td>悬疑</td>
+</tr>
+<tr>
+<td>《疑犯追踪》</td>
+<td>动作</td>
+</tr>
+<tr>
+<td>《疑犯追踪》</td>
+<td>科幻</td>
+</tr>
+<tr>
+<td>《疑犯追踪》</td>
+<td>剧情</td>
+</tr>
+<tr>
+<td>《lie to me》</td>
+<td>警匪</td>
+</tr>
+<tr>
+<td>《lie to me》</td>
+<td>动作</td>
+</tr>
+<tr>
+<td>《lie to me》</td>
+<td>心理</td>
+</tr>
+</tbody></table>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
     movie<span class="token punctuation">.</span> categrory_name
 <span class="token keyword">from</span> 
@@ -1074,9 +1746,51 @@ lateral  <span class="token keyword">view</span> explode <span class="token punc
 <li>需求2： 将 表 table 中的 <code>adid_list</code> 转换为单独的行。</li>
 </ul>
 <p>表-table：</p>
-<p><a href="https://www.notion.so/0c398ee564d14e8b924600b5edc6c2cd" target="_blank" rel="noopener">Untitled</a></p>
-<p>输出结果为：</p>
-<p><a href="https://www.notion.so/9b012931a2944f14bd31f810a67ee57e" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>pageid</th>
+<th>adid_list</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>front_page</td>
+<td>[1,2,3]</td>
+</tr>
+<tr>
+<td>contact_page</td>
+<td>[3,4]</td>
+</tr>
+</tbody></table>
+<p> 输出结果为： </p>
+<table>
+<thead>
+<tr>
+<th>pageid</th>
+<th>adid_list</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>front_page</td>
+<td>1</td>
+</tr>
+<tr>
+<td>front_page</td>
+<td>2</td>
+</tr>
+<tr>
+<td>front_page</td>
+<td>3</td>
+</tr>
+<tr>
+<td>contact_page</td>
+<td>3</td>
+</tr>
+<tr>
+<td>contact_page</td>
+<td>4</td>
+</tr>
+</tbody></table>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
     pageid<span class="token punctuation">,</span> adid
 <span class="token keyword">from</span> 
@@ -1094,14 +1808,91 @@ later <span class="token keyword">view</span> explode<span class="token punctuat
 <span class="token keyword">group</span> <span class="token keyword">by</span> 
 adid</code></pre>
 <p>输出结果为：</p>
-<p><a href="https://www.notion.so/d99abba5c5c9462e930a080d6201e3ac" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>adid</th>
+<th>count(1)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+</tr>
+</tbody></table>
 <ul>
 <li>需求4： 多个 lateral view 查询</li>
 </ul>
 <p>表： table2</p>
-<p><a href="https://www.notion.so/10fcc80c3f164561bb10c9661e298713" target="_blank" rel="noopener">Untitled</a></p>
-<p>输出结果为：</p>
-<p><a href="https://www.notion.so/cd2500e08bce45ce85967c0724d6cb8a" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>array</th>
+<th>col2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[1,2]</td>
+<td>[“a”，”b”]</td>
+</tr>
+<tr>
+<td>[3,4]</td>
+<td>[“c”, “d”]</td>
+</tr>
+</tbody></table>
+<p>输出结果为： </p>
+<table>
+<thead>
+<tr>
+<th>myCol1</th>
+<th>myCol2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>“a”</td>
+</tr>
+<tr>
+<td>1</td>
+<td>“b”</td>
+</tr>
+<tr>
+<td>2</td>
+<td>“a”</td>
+</tr>
+<tr>
+<td>2</td>
+<td>“b”</td>
+</tr>
+<tr>
+<td>3</td>
+<td>“c”</td>
+</tr>
+<tr>
+<td>3</td>
+<td>“d”</td>
+</tr>
+<tr>
+<td>4</td>
+<td>“c”</td>
+</tr>
+<tr>
+<td>4</td>
+<td>“d”</td>
+</tr>
+</tbody></table>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
     mycol1<span class="token punctuation">,</span>
     mycol2
@@ -1114,10 +1905,74 @@ alteral  <span class="token keyword">view</span> explode<span class="token punct
 <li>函数</li>
 </ol>
 <p><a href="https://www.notion.so/1d4b120e53004ce598cb867350a8391a" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>over()</td>
+<td>指定分析函数工作的数据窗口大小，这个数据窗口大小可能会随着行的变化而变化</td>
+</tr>
+<tr>
+<td><strong>常跟的函数</strong></td>
+<td><strong>说明</strong></td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>current row</td>
+<td>当前行</td>
+</tr>
+<tr>
+<td>n preceding</td>
+<td>往前n行数据</td>
+</tr>
+<tr>
+<td>n following</td>
+<td>往后n行数据</td>
+</tr>
+<tr>
+<td>unbounded</td>
+<td>起点</td>
+</tr>
+<tr>
+<td>uvbounded preceding</td>
+<td>表示从前面的起点开始</td>
+</tr>
+<tr>
+<td>unbounded following</td>
+<td>表示到后面的终点</td>
+</tr>
+<tr>
+<td>lag(col, n)</td>
+<td>往前第n行数据</td>
+</tr>
+<tr>
+<td>lead(col, n)</td>
+<td>往后第n行数据</td>
+</tr>
+<tr>
+<td>ntile(n)</td>
+<td>把有序分区中的行分发到指定数据的组中， 各个组有编号，编号从1开始，ntile返回此行所属组的编号</td>
+</tr>
+<tr>
+<td>first_value()</td>
+<td>返回组中数据窗口的第一个值</td>
+</tr>
+<tr>
+<td>last_value()</td>
+<td>返回组中数据窗口的最后一个值</td>
+</tr>
+</tbody></table>
 <ol>
 <li>案例</li>
 </ol>
-<p><a href="https://www.notion.so/b1f5181119e448ecbb1091f200d1df47" target="_blank" rel="noopener">business</a></p>
+<p><a href="https://www.notion.so/b1f5181119e448ecbb1091f200d1df47" target="_blank" rel="noopener">business</a><br>|name| orderdate| cost|<br>|—|—|—|<br>|jack| 2017-01-01|10<br>|tony| 2017-01-02|15<br>|jack| 2017-01-03|23<br>|tony| 2017-01-04|29<br>|jack| 2017-01-05|46<br>|jack| 2017-04-06|42<br>|tony| 2017-01-07|50<br>|jack| 2017-01-08|55<br>|mart| 2017-04-08|62<br>|mart| 2017-04-09|68<br>|neil| 2017-05-10|12<br>|mart| 2017-04-11|75<br>|neil| 2017-06-12|80<br>|mart| 2017-04-13|94</p>
 <ul>
 <li>查询在2017年4月购买的顾客及总人数</li>
 </ul>
@@ -1131,6 +1986,25 @@ substring<span class="token punctuation">(</span>hit_date<span class="token punc
 <span class="token keyword">group</span> <span class="token keyword">by</span> 
 name </code></pre>
 <p><a href="https://www.notion.so/f01b633de76944dcaef4092b1ec908f7" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>c1</th>
+<th>不加over</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>jack</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>mart</td>
+<td>2</td>
+<td>4</td>
+</tr>
+</tbody></table>
 <ul>
 <li>查询顾客的购买明细及月购买总额</li>
 </ul>
@@ -1321,6 +2195,73 @@ raw_1 <span class="token operator">>=</span> <span class="token number">7</span>
 <li>函数</li>
 </ol>
 <p><a href="https://www.notion.so/5ddc2ea0afb142c8816728fe78c521a7" target="_blank" rel="noopener">Untitled</a></p>
+<ol>
+<li>函数</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>concat()</td>
+<td>拼接字符串</td>
+</tr>
+<tr>
+<td>length()</td>
+<td>计算字符串的长度，一个汉字算三个字符</td>
+</tr>
+<tr>
+<td>instr (A ,B )</td>
+<td>返回字符B首次在A中出现的位置,不存在返回0</td>
+</tr>
+<tr>
+<td>lcase()</td>
+<td>转换成小写</td>
+</tr>
+<tr>
+<td>left(string2 ,length )</td>
+<td>从string2中的左边起取length个字符</td>
+</tr>
+<tr>
+<td>lower()</td>
+<td>将字串转化为小写</td>
+</tr>
+<tr>
+<td>upper()</td>
+<td>将字符转化为大写</td>
+</tr>
+<tr>
+<td>replace()</td>
+<td>替换字符</td>
+</tr>
+<tr>
+<td>split()</td>
+<td>hive字符串分割函数</td>
+</tr>
+<tr>
+<td>substr()</td>
+<td>返回字符串A从start位置开始，长度为len的字符串</td>
+</tr>
+<tr>
+<td>substring()</td>
+<td>截取字符串</td>
+</tr>
+<tr>
+<td>substring_index()</td>
+<td>通过截取获取不同索引位的字符</td>
+</tr>
+<tr>
+<td>LTRIM (string2 )</td>
+<td>去除前端空格</td>
+</tr>
+<tr>
+<td>RTRIM (string2 )</td>
+<td>去除后端空格</td>
+</tr>
+</tbody></table>
 <ol>
 <li>函数详解</li>
 </ol>
@@ -1664,7 +2605,7 @@ where
                 <a href="/2020/06/19/hive-sql-zhi-shi-dian-zong-jie/">
                     <div class="card-image">
                         
-                        <img src="/source/images/3.jpg" class="responsive-img" alt="技能-Hive-SQL学习">
+                        <img src="https://brandgenetics.com/wp-content/uploads/2020/03/Hive-banner_26032020_revised-with-safe-space_option-2--1100x400.png" class="responsive-img" alt="技能-Hive-SQL学习">
                         
                         <span class="card-title">技能-Hive-SQL学习</span>
                     </div>
@@ -1713,7 +2654,7 @@ where
                 <a href="/2018/09/07/hello-world/">
                     <div class="card-image">
                         
-                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://miro.medium.com/max/1400/1*KUy_KKExZrSpBuv9XfyBgA.png" class="responsive-img" alt="Hello World">
                         
                         <span class="card-title">Hello World</span>
                     </div>
@@ -1785,6 +2726,100 @@ where
 code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
 </style>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
