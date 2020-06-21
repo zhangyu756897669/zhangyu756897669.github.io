@@ -584,7 +584,9 @@
 <h2 id="where"><a href="#where" class="headerlink" title="where"></a>where</h2><ul>
 <li>关系型运算符优先级高到低为：not - and - or</li>
 </ul>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> employees <span class="token keyword">where</span> country <span class="token operator">=</span> <span class="token string">'us'</span> <span class="token operator">and</span> state <span class="token operator">=</span> <span class="token string">'ca'</span><span class="token punctuation">;</span><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> employees <span class="token keyword">where</span> country  <span class="token operator">not</span> <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token string">'us'</span><span class="token punctuation">,</span> <span class="token string">'china'</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> employees <span class="token keyword">where</span> country <span class="token operator">=</span> <span class="token string">'us'</span> <span class="token operator">and</span> state <span class="token operator">=</span> <span class="token string">'ca'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> employees <span class="token keyword">where</span> country  <span class="token operator">not</span> <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token string">'us'</span><span class="token punctuation">,</span> <span class="token string">'china'</span><span class="token punctuation">)</span></code></pre>
 <ul>
 <li>数学运算符与关系运算符</li>
 </ul>
@@ -765,20 +767,25 @@
 
 <span class="token keyword">select</span>     year<span class="token punctuation">(</span>ymd<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>price_close<span class="token punctuation">)</span> 
 
-<span class="token keyword">from</span>     stockswhere     exchange <span class="token operator">=</span> <span class="token string">'nasdaq'</span> <span class="token operator">and</span> symbol <span class="token operator">=</span> <span class="token string">'aapl'</span>
+<span class="token keyword">from</span>     stocks
+
+<span class="token keyword">where</span>     exchange <span class="token operator">=</span> <span class="token string">'nasdaq'</span> <span class="token operator">and</span> symbol <span class="token operator">=</span> <span class="token string">'aapl'</span>
 
 <span class="token keyword">group</span> <span class="token keyword">by</span>     year<span class="token punctuation">(</span>ymd<span class="token punctuation">)</span>
 
 <span class="token keyword">order</span> <span class="token keyword">by</span>     year<span class="token punctuation">(</span>ymd<span class="token punctuation">)</span> <span class="token keyword">desc</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">--desc 从高到低排列</span></code></pre>
-<h2 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--对查询的所有结果进行排序, 可在字段加 DESC 关键字， 进行降序排序。 （默认 ASC， 升序）</span>
+<h2 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h2><!-- ```sql
+--对查询的所有结果进行排序, 可在字段加 DESC 关键字， 进行降序排序。 （默认 ASC， 升序）
 
-<span class="token keyword">select</span>     year<span class="token punctuation">(</span>ymd<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>price_close<span class="token punctuation">)</span> 
+select     year(ymd), avg(price_close) 
 
-<span class="token keyword">from</span>     stockswhere     exchange <span class="token operator">=</span> <span class="token string">'nasdaq'</span> <span class="token operator">and</span> symbol <span class="token operator">=</span> <span class="token string">'aapl'</span>
+from     stockswhere     exchange = 'nasdaq' and symbol = 'aapl'
 
-<span class="token keyword">group</span> <span class="token keyword">by</span>     year<span class="token punctuation">(</span>ymd<span class="token punctuation">)</span>
+group by     year(ymd)
 
-<span class="token keyword">order</span> <span class="token keyword">by</span>     year<span class="token punctuation">(</span>ymd<span class="token punctuation">)</span> <span class="token keyword">desc</span><span class="token punctuation">;</span></code></pre>
+order by     year(ymd) desc;
+``` -->
+
 <pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--先对code进行排序，然后对code里的姓名进行排序</span>
 
 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token number">a</span> 
@@ -786,7 +793,13 @@
 <span class="token keyword">order</span> <span class="token keyword">by</span> code<span class="token punctuation">,</span> name <span class="token keyword">desc</span><span class="token punctuation">;</span></code></pre>
 <h2 id="having"><a href="#having" class="headerlink" title="having"></a>having</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--- having 子句来限制输出结果--- 查找平均工资大于3000的部门</span>
 
-<span class="token keyword">select</span>     deparment<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> average <span class="token keyword">from</span>      salary_info <span class="token keyword">group</span> <span class="token keyword">by</span>     deparment <span class="token keyword">having</span>     average <span class="token operator">></span> <span class="token number">3000</span></code></pre>
+<span class="token keyword">select</span>     deparment<span class="token punctuation">,</span> <span class="token function">avg</span><span class="token punctuation">(</span>salary<span class="token punctuation">)</span> <span class="token keyword">as</span> average 
+
+<span class="token keyword">from</span>      salary_info
+
+<span class="token keyword">group</span> <span class="token keyword">by</span>     deparment 
+
+<span class="token keyword">having</span>     average <span class="token operator">></span> <span class="token number">3000</span></code></pre>
 <ul>
 <li>having 与 where 的区别：</li>
 <li>Where 是一个约束声明，使用Where约束来自数据库的数据，Where是在结果返回之前起作用的，Where中不能使用聚合函数。</li>
@@ -794,11 +807,13 @@
 </ul>
 <h2 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">---使用limit语句限制返回的行数，只显示 10 行</span>
 
-<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token keyword">distinct</span> account<span class="token punctuation">)</span> <span class="token keyword">as</span> uv  <span class="token keyword">from</span>  employees  
+<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token keyword">distinct</span> account<span class="token punctuation">)</span> <span class="token keyword">as</span> uv 
+
+<span class="token keyword">from</span>  employees  
 
 <span class="token keyword">limit</span> <span class="token number">10</span><span class="token punctuation">;</span></code></pre>
 <h2 id="表连接"><a href="#表连接" class="headerlink" title="表连接"></a>表连接</h2><h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><p>Hive中Join的关联键必须在ON ()中指定，不能在Where中指定,ON 子句指定了两个表间数据进行连接的条件。</p>
-<p><img src="https://i.loli.net/2019/06/11/5cffb911ad8e183153.png" alt="https://i.loli.net/2019/06/11/5cffb911ad8e183153.png"></p>
+<p><img src="https://i.loli.net/2019/06/11/5cffb911ad8e183153.png" alt="join"></p>
 <ul>
 <li>对于多张表进行连接查询</li>
 </ul>
@@ -957,9 +972,10 @@
 </tr>
 </tbody></table>
 <ul>
-<li>count(1)、count(*)、count(column) 之间的区别</li>
-<li>执行范围上： count(*) 和 count (1)  都包含了 对NULL的统计。 count(列名)统计时不包含NULL值。</li>
-<li>执行速度上： 列名为主键时， count(列名) 最快<em>。  当无主键时， count(1) 最快。  当表只有一个字段，count(</em>) 最快。*</li>
+<li>count(1)、count(*)、count(column) 之间的区别<blockquote>
+<p>执行范围上： count(*) 和 count (1)  都包含了 对NULL的统计。 count(列名)统计时不包含NULL值。<br>执行速度上： 列名为主键时， count(列名) 最快。  当无主键时， count(1) 最快。  当表只有一个字段，count(*) 最快。</p>
+</blockquote>
+</li>
 </ul>
 <hr>
 <h2 id="时间函数"><a href="#时间函数" class="headerlink" title="时间函数"></a>时间函数</h2><p><a href="https://www.notion.so/14a471014a4b4f6995852df51f317e2b" target="_blank" rel="noopener">Untitled</a></p>
@@ -1136,80 +1152,85 @@
     <span class="token number">a1</span><span class="token punctuation">.</span>hit_date
 
 <span class="token comment" spellcheck="true">--步骤3：计算留存率</span></code></pre>
-<ul>
-<li>计算留存率的其他写法-迷神</li>
-</ul>
-<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 留存sql优化</span>
-<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token keyword">from</span><span class="token punctuation">(</span>
-    <span class="token keyword">select</span> userid<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token keyword">from</span><span class="token punctuation">(</span>
-        <span class="token keyword">select</span> t1<span class="token punctuation">.</span>userid<span class="token punctuation">,</span>
-                t1<span class="token punctuation">.</span>statdate
-        <span class="token keyword">from</span>
+<!-- 
+- 计算留存率的其他写法-迷神
+
+```sql
+-- 留存sql优化
+select count(1)
+from(
+    select userid, count(1)
+    from(
+        select t1.userid,
+                t1.statdate
+        from
             table1 t1
-        <span class="token keyword">where</span>
-            t1<span class="token punctuation">.</span>statdate <span class="token operator">=</span> ${上<span class="token number">30</span>天日期}
-            <span class="token operator">and</span> t1<span class="token punctuation">.</span>statdate <span class="token operator">&lt;=</span> ${上一天日期}
-        <span class="token keyword">group</span> <span class="token keyword">by</span>
-            t1<span class="token punctuation">.</span>userid<span class="token punctuation">,</span>
-            t1<span class="token punctuation">.</span>statdate
-        <span class="token punctuation">)</span> s1
-    <span class="token keyword">group</span> <span class="token keyword">by</span>
+        where
+            t1.statdate = ${上30天日期}
+            and t1.statdate <= ${上一天日期}
+        group by
+            t1.userid,
+            t1.statdate
+        ) s1
+    group by
         userid
-    <span class="token keyword">having</span>
-        <span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token number">2</span>
-    <span class="token punctuation">)</span> R1
+    having
+        count(1)  2
+    ) R1
 
-<span class="token comment" spellcheck="true">--此sql为一个样例，计算连续跟任意都适用，至于计算第N天，只需要更改下日期过滤条件，变成=$[上N天日期]，=${上一天日期}。 </span>
-<span class="token comment" spellcheck="true">--另外，这种方式适合跑当前周期数据，如果跑历史数据，可以写个循环。当然，最暴力还是直接用userid 关联。</span>
+--此sql为一个样例，计算连续跟任意都适用，至于计算第N天，只需要更改下日期过滤条件，变成=$[上N天日期]，=${上一天日期}。 
+--另外，这种方式适合跑当前周期数据，如果跑历史数据，可以写个循环。当然，最暴力还是直接用userid 关联。
 
-<span class="token comment" spellcheck="true">--这种写法，更多是针对现在大部分分布式处理平台的特性，尽可能将数据合理均匀分片，每台服务器各自运算自己的，最后汇总。 尽可能少用 count distinct 这种写法，因为无法利用分片的特性。</span></code></pre>
-<ul>
-<li>留存率的另一种写法-勇哥</li>
-</ul>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">with</span> <span class="token number">a1</span> <span class="token keyword">as</span> <span class="token punctuation">(</span>
-<span class="token keyword">select</span>
-    hit_date<span class="token punctuation">,</span>
-    user_account<span class="token punctuation">,</span>
-    <span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">as</span> hit_count
-<span class="token keyword">from</span> 
-    apache_computer_view<span class="token punctuation">.</span>client_android_log
-<span class="token keyword">WHERE</span> 
-    hit_date <span class="token operator">between</span> <span class="token string">'2020-04-01'</span> <span class="token operator">and</span>  <span class="token string">'2020-04-07'</span>
-    <span class="token operator">and</span>
-    btn_navigation  <span class="token operator">like</span> <span class="token string">"%查询办理%"</span>
-<span class="token keyword">group</span> <span class="token keyword">by</span>
-    <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span>
-<span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token number">a2</span> <span class="token keyword">as</span> <span class="token punctuation">(</span>
-<span class="token keyword">select</span>
-    hit_date<span class="token punctuation">,</span>
-    user_account<span class="token punctuation">,</span>
-    <span class="token function">count</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">as</span> hit_count
-<span class="token keyword">from</span> 
-    apache_computer_view<span class="token punctuation">.</span>client_android_log
-<span class="token keyword">WHERE</span>
-    hit_date <span class="token operator">between</span> <span class="token string">'2020-04-01'</span> <span class="token operator">and</span>  <span class="token string">'2020-04-07'</span>
-    <span class="token operator">and</span>
-    btn_navigation  <span class="token operator">like</span> <span class="token string">"%查询办理%"</span>
-<span class="token keyword">group</span> <span class="token keyword">by</span>
-    <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span>
-<span class="token punctuation">)</span>
-<span class="token keyword">select</span> 
-    <span class="token number">a1</span><span class="token punctuation">.</span>hit_date <span class="token keyword">as</span> one<span class="token punctuation">,</span>
-    <span class="token number">a2</span><span class="token punctuation">.</span>hit_date <span class="token keyword">as</span> two<span class="token punctuation">,</span>
-    datediff<span class="token punctuation">(</span><span class="token number">a2</span><span class="token punctuation">.</span>hit_date<span class="token punctuation">,</span> <span class="token number">a1</span><span class="token punctuation">.</span>hit_date<span class="token punctuation">)</span> <span class="token keyword">as</span> cha<span class="token punctuation">,</span>
-    <span class="token function">count</span><span class="token punctuation">(</span><span class="token keyword">distinct</span> <span class="token number">a2</span><span class="token punctuation">.</span>user_account<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">a2</span><span class="token punctuation">.</span>hit_count<span class="token punctuation">)</span>
-<span class="token keyword">from</span>
-    <span class="token number">a1</span> <span class="token keyword">left</span> <span class="token keyword">join</span> <span class="token number">a2</span> <span class="token keyword">on</span> <span class="token number">a1</span><span class="token punctuation">.</span>user_account <span class="token operator">=</span> <span class="token number">a2</span><span class="token punctuation">.</span>user_account
-<span class="token keyword">group</span> <span class="token keyword">by</span>
-    <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span>
-<span class="token keyword">having</span>
-    cha <span class="token operator">></span> <span class="token number">0</span>
-<span class="token keyword">order</span> <span class="token keyword">by</span>
-    <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span></code></pre>
+--这种写法，更多是针对现在大部分分布式处理平台的特性，尽可能将数据合理均匀分片，每台服务器各自运算自己的，最后汇总。 尽可能少用 count distinct 这种写法，因为无法利用分片的特性。
+```
+
+- 留存率的另一种写法-勇哥
+
+```sql
+with a1 as (
+select
+    hit_date,
+    user_account,
+    count(1) as hit_count
+from 
+    apache_computer_view.client_android_log
+WHERE 
+    hit_date between '2020-04-01' and  '2020-04-07'
+    and
+    btn_navigation  like "%查询办理%"
+group by
+    1,2
+),
+a2 as (
+select
+    hit_date,
+    user_account,
+    count(1) as hit_count
+from 
+    apache_computer_view.client_android_log
+WHERE
+    hit_date between '2020-04-01' and  '2020-04-07'
+    and
+    btn_navigation  like "%查询办理%"
+group by
+    1,2
+)
+select 
+    a1.hit_date as one,
+    a2.hit_date as two,
+    datediff(a2.hit_date, a1.hit_date) as cha,
+    count(distinct a2.user_account),
+    sum(a2.hit_count)
+from
+    a1 left join a2 on a1.user_account = a2.user_account
+group by
+    1,2
+having
+    cha > 0
+order by
+    1,2
+``` -->
+
 <ul>
 <li>计算月留存率的简单写法：筛选出在两个月份出现的用户</li>
 </ul>
@@ -1340,7 +1361,7 @@
 <span class="token function">sum</span><span class="token punctuation">(</span> <span class="token keyword">case</span> <span class="token keyword">when</span> 性别 <span class="token operator">=</span> <span class="token string">'男'</span> <span class="token keyword">then</span> <span class="token number">1</span>  <span class="token keyword">else</span> <span class="token boolean">null</span> <span class="token keyword">end</span> <span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token string">'男'</span><span class="token punctuation">,</span>
 <span class="token function">sum</span><span class="token punctuation">(</span> <span class="token keyword">case</span> <span class="token keyword">when</span> 性别 <span class="token operator">=</span> <span class="token string">'女'</span> <span class="token keyword">then</span> <span class="token number">1</span> <span class="token keyword">else</span> <span class="token boolean">null</span> <span class="token keyword">end</span> <span class="token punctuation">)</span> <span class="token keyword">as</span>  <span class="token string">'女'</span>
 <span class="token keyword">from</span> 
-<span class="token keyword">table</span> 
+table1
 <span class="token keyword">group</span> <span class="token keyword">by</span> 
 <span class="token string">'部门'</span></code></pre>
 <ul>
@@ -1597,7 +1618,11 @@ con_blood</code></pre>
 <ul>
 <li>求将每个省的城市列出来</li>
 </ul>
-<pre><code>---辽宁省  ["营口市","大连","大连市","抚顺市","铁岭","盘锦","锦州","沈阳市","辽阳","鞍山","铁岭市","本溪市","丹东市","丹东","沈阳","朝阳市","锦州市","辽阳市","阜新市","鞍山市","盘锦市","葫芦岛","营口","抚顺","葫芦岛市","阜新","本溪","朝阳"]</code></pre><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+<!-- ```
+---辽宁省  ["营口市","大连","大连市","抚顺市","铁岭","盘锦","锦州","沈阳市","辽阳","鞍山","铁岭市","本溪市","丹东市","丹东","沈阳","朝阳市","锦州市","辽阳市","阜新市","鞍山市","盘锦市","葫芦岛","营口","抚顺","葫芦岛市","阜新","本溪","朝阳"]
+``` -->
+
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
 province<span class="token punctuation">,</span> 
 collect_set<span class="token punctuation">(</span>city<span class="token punctuation">)</span> 
 <span class="token keyword">from</span> 
@@ -1628,39 +1653,152 @@ size<span class="token punctuation">(</span>dt<span class="token punctuation">)<
 <ul>
 <li>两表结合</li>
 </ul>
-<p><a href="https://www.notion.so/030e6cc4100746f78cd14d8c97988c3c" target="_blank" rel="noopener">user_basic_info</a></p>
-<p><a href="https://www.notion.so/10c03ebfa15447d0b910c5c797835bbd" target="_blank" rel="noopener">user_address</a></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>2</td>
+<td>b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>c</td>
+</tr>
+<tr>
+<td>4</td>
+<td>d</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>address</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>add1</td>
+</tr>
+<tr>
+<td>a</td>
+<td>add2</td>
+</tr>
+<tr>
+<td>b</td>
+<td>add3</td>
+</tr>
+<tr>
+<td>c</td>
+<td>add4</td>
+</tr>
+<tr>
+<td>d</td>
+<td>add5</td>
+</tr>
+</tbody></table>
 <p>我们可以看到同一个用户不止一个地址，我们需要把数据变为如下格式</p>
-<p><a href="https://www.notion.so/d59de578954844cd81b9579a26ae3e07" target="_blank" rel="noopener">user_info</a></p>
-<pre class=" language-sql"><code class="language-sql">  <span class="token keyword">with</span> a1as <span class="token punctuation">(</span><span class="token keyword">select</span> 
-name<span class="token punctuation">,</span>
-concat_ws <span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">,</span> collect_set<span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> addres
-<span class="token keyword">from</span> 
-user_address
-<span class="token keyword">group</span> <span class="token keyword">by</span> 
-name<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>address</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>a</td>
+<td>add1,add2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>b</td>
+<td>add3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>c</td>
+<td>add4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>d</td>
+<td>add5</td>
+</tr>
+</tbody></table>
+<pre class=" language-sql"><code class="language-sql">  <span class="token keyword">with</span> <span class="token number">a1</span> <span class="token keyword">as</span> <span class="token punctuation">(</span>
+    <span class="token keyword">select</span> 
+        name<span class="token punctuation">,</span>
+        concat_ws <span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">,</span> collect_set<span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> addres
+    <span class="token keyword">from</span> 
+        user_address
+    <span class="token keyword">group</span> <span class="token keyword">by</span> 
+        name<span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token number">a2</span> <span class="token keyword">as</span> <span class="token punctuation">(</span>
+    <span class="token keyword">select</span> 
+        id<span class="token punctuation">,</span> name 
+    <span class="token keyword">from</span> 
+        user_basic_info <span class="token punctuation">)</span> 
 <span class="token keyword">select</span> 
-id<span class="token punctuation">,</span> name 
+    <span class="token number">a2</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token number">a2</span><span class="token punctuation">.</span>name <span class="token punctuation">,</span><span class="token number">a1</span><span class="token punctuation">.</span>addres
 <span class="token keyword">from</span> 
-user_basic_info <span class="token punctuation">)</span> 
-<span class="token keyword">select</span> 
-<span class="token number">a2</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token number">a2</span><span class="token punctuation">.</span>name <span class="token punctuation">,</span><span class="token number">a1</span><span class="token punctuation">.</span>addres
-<span class="token keyword">from</span> 
-<span class="token number">a2</span> <span class="token keyword">left</span> <span class="token keyword">join</span> <span class="token number">a1</span> <span class="token keyword">on</span> <span class="token number">a2</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token number">a1</span><span class="token punctuation">.</span>name 
+    <span class="token number">a2</span> <span class="token keyword">left</span> <span class="token keyword">join</span> <span class="token number">a1</span> <span class="token keyword">on</span> <span class="token number">a2</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token number">a1</span><span class="token punctuation">.</span>name 
 
 <span class="token keyword">select</span>
 
- <span class="token number">a1</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token number">a1</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> concat_ws<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">,</span> collect_set<span class="token punctuation">(</span><span class="token number">a2</span><span class="token punctuation">.</span>address<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> address
+    <span class="token number">a1</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token number">a1</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> concat_ws<span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">,</span> collect_set<span class="token punctuation">(</span><span class="token number">a2</span><span class="token punctuation">.</span>address<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> address
 
 <span class="token keyword">from</span>
 
-user_basic_info <span class="token number">a1</span> <span class="token keyword">join</span> user_address <span class="token number">a2</span>  <span class="token keyword">on</span> <span class="token number">a1</span><span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token number">a2</span><span class="token punctuation">.</span>name
+    user_basic_info <span class="token number">a1</span> <span class="token keyword">join</span> user_address <span class="token number">a2</span>  <span class="token keyword">on</span> <span class="token number">a1</span><span class="token punctuation">.</span>name<span class="token operator">=</span><span class="token number">a2</span><span class="token punctuation">.</span>name
 
-<span class="token keyword">group</span> <span class="token keyword">by</span> <span class="token number">a1</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token number">a1</span><span class="token punctuation">.</span>name
+<span class="token keyword">group</span> <span class="token keyword">by</span> 
+    <span class="token number">a1</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token number">a1</span><span class="token punctuation">.</span>name
 </code></pre>
 <p>将组合的表拆分成如下形式：</p>
-<p><a href="https://www.notion.so/0651c21f509149a59e33ffef2733053c" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>address</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>a</td>
+<td>add1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>a</td>
+<td>add2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>b</td>
+<td>add3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>c</td>
+<td>add4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>d</td>
+<td>add5</td>
+</tr>
+</tbody></table>
 <pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--这样写会会生成笛卡尔积，执行报错</span>
 <span class="token keyword">select</span> id， name<span class="token punctuation">,</span> explode<span class="token punctuation">(</span>address<span class="token punctuation">)</span>  <span class="token keyword">as</span> address <span class="token keyword">from</span> user_info<span class="token punctuation">;</span>
 
@@ -1904,7 +2042,6 @@ alteral  <span class="token keyword">view</span> explode<span class="token punct
 <h2 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h2><ol>
 <li>函数</li>
 </ol>
-<p><a href="https://www.notion.so/1d4b120e53004ce598cb867350a8391a" target="_blank" rel="noopener">Untitled</a></p>
 <table>
 <thead>
 <tr>
@@ -1972,7 +2109,85 @@ alteral  <span class="token keyword">view</span> explode<span class="token punct
 <ol>
 <li>案例</li>
 </ol>
-<p><a href="https://www.notion.so/b1f5181119e448ecbb1091f200d1df47" target="_blank" rel="noopener">business</a><br>|name| orderdate| cost|<br>|—|—|—|<br>|jack| 2017-01-01|10<br>|tony| 2017-01-02|15<br>|jack| 2017-01-03|23<br>|tony| 2017-01-04|29<br>|jack| 2017-01-05|46<br>|jack| 2017-04-06|42<br>|tony| 2017-01-07|50<br>|jack| 2017-01-08|55<br>|mart| 2017-04-08|62<br>|mart| 2017-04-09|68<br>|neil| 2017-05-10|12<br>|mart| 2017-04-11|75<br>|neil| 2017-06-12|80<br>|mart| 2017-04-13|94</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>orderdate</th>
+<th>cost</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>jack</td>
+<td>2017-01-01</td>
+<td>10</td>
+</tr>
+<tr>
+<td>tony</td>
+<td>2017-01-02</td>
+<td>15</td>
+</tr>
+<tr>
+<td>jack</td>
+<td>2017-01-03</td>
+<td>23</td>
+</tr>
+<tr>
+<td>tony</td>
+<td>2017-01-04</td>
+<td>29</td>
+</tr>
+<tr>
+<td>jack</td>
+<td>2017-01-05</td>
+<td>46</td>
+</tr>
+<tr>
+<td>jack</td>
+<td>2017-04-06</td>
+<td>42</td>
+</tr>
+<tr>
+<td>tony</td>
+<td>2017-01-07</td>
+<td>50</td>
+</tr>
+<tr>
+<td>jack</td>
+<td>2017-01-08</td>
+<td>55</td>
+</tr>
+<tr>
+<td>mart</td>
+<td>2017-04-08</td>
+<td>62</td>
+</tr>
+<tr>
+<td>mart</td>
+<td>2017-04-09</td>
+<td>68</td>
+</tr>
+<tr>
+<td>neil</td>
+<td>2017-05-10</td>
+<td>12</td>
+</tr>
+<tr>
+<td>mart</td>
+<td>2017-04-11</td>
+<td>75</td>
+</tr>
+<tr>
+<td>neil</td>
+<td>2017-06-12</td>
+<td>80</td>
+</tr>
+<tr>
+<td>mart</td>
+<td>2017-04-13</td>
+<td>94</td>
+</tr>
+</tbody></table>
 <ul>
 <li>查询在2017年4月购买的顾客及总人数</li>
 </ul>
@@ -1985,7 +2200,6 @@ business
 substring<span class="token punctuation">(</span>hit_date<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">'2017-04'</span>
 <span class="token keyword">group</span> <span class="token keyword">by</span> 
 name </code></pre>
-<p><a href="https://www.notion.so/f01b633de76944dcaef4092b1ec908f7" target="_blank" rel="noopener">Untitled</a></p>
 <table>
 <thead>
 <tr>
@@ -2010,8 +2224,8 @@ name </code></pre>
 </ul>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
 <span class="token operator">*</span><span class="token punctuation">,</span>
-<span class="token function">sum</span><span class="token punctuation">(</span>cost<span class="token punctuation">)</span><span class="token keyword">over</span><span class="token punctuation">(</span>distribute <span class="token keyword">by</span> month<span class="token punctuation">(</span>orderdate<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">--sum(cost)over(partition by month(orderdate))</span>
+<span class="token comment" spellcheck="true">-- sum(cost)over(distribute by month(orderdate))</span>
+<span class="token function">sum</span><span class="token punctuation">(</span>cost<span class="token punctuation">)</span><span class="token keyword">over</span><span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> month<span class="token punctuation">(</span>orderdate<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">from</span> 
 business</code></pre>
 <ul>
@@ -2095,10 +2309,13 @@ dense_rank<span class="token punctuation">(</span><span class="token punctuation
 row_number<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> A <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token number">b</span> <span class="token keyword">desc</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">--1、2、3</span>
 ntile<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">over</span> <span class="token punctuation">(</span><span class="token keyword">partition</span> <span class="token keyword">by</span> A <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token number">b</span> <span class="token keyword">desc</span><span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">--分组</span></code></pre>
 <ul>
-<li>如何找出各省点击人数Top10的按钮？</li>
+<li>找出各省点击人数Top10的按钮？</li>
 </ul>
-<p>对于这个问题，首先要理清自己的思路：1. 取出 省份、按钮和 uv;2. 各省分组内，按照uv进行从大到小排序，并输出一列排序序号;3. 根据排序序号，取出排序前10的按钮和省份。 </p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--1. 取出 省份、按钮和 uv;</span>
+<span class="token comment" spellcheck="true">--2. 各省分组内，按照uv进行从大到小排序，并输出一列排序序号;</span>
+<span class="token comment" spellcheck="true">--3. 根据排序序号，取出排序前10的按钮和省份。 </span>
+
+<span class="token keyword">select</span> 
 province<span class="token punctuation">,</span>
 nbtn_name
 <span class="token keyword">from</span> 
@@ -2266,13 +2483,16 @@ raw_1 <span class="token operator">>=</span> <span class="token number">7</span>
 <li>函数详解</li>
 </ol>
 <p><strong>substr函数与 substring函数用法相同:</strong></p>
-<pre><code>substr/substring( A, k开始截取的位置，截取长度)</code></pre><p>举例：</p>
-<pre><code>substr(string,4): 从右第4位置截取到最后，结果为：ing
-substr(string,1,3):取左边第1位置起，3字长的字符串，结果为：str
-substr(string,-3,3):取右边第1位置起，3字长的字符串,右边第一位置往右不够3字长，结果为：g
-substr(string,-3,3):取右边第1位置起，3字长的字符串，结果为：ing</code></pre><p><strong>substring_index函数</strong></p>
-<pre><code>substring_index(A, 分割的字符,截取字符的位置)</code></pre><p>举例：</p>
-<pre><code>substring_index('15,151,152,16',',',1)：取第一个逗号前面的字符串，结果为：15
+<pre class=" language-sql"><code class="language-sql">substr<span class="token operator">/</span>substring<span class="token punctuation">(</span> A<span class="token punctuation">,</span> k开始截取的位置，截取长度<span class="token punctuation">)</span></code></pre>
+<p>举例：</p>
+<pre class=" language-sql"><code class="language-sql">substr<span class="token punctuation">(</span>string<span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span>: 从右第<span class="token number">4</span>位置截取到最后，结果为：ing
+substr<span class="token punctuation">(</span>string<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>:取左边第<span class="token number">1</span>位置起，<span class="token number">3</span>字长的字符串，结果为：str
+substr<span class="token punctuation">(</span>string<span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>:取右边第<span class="token number">1</span>位置起，<span class="token number">3</span>字长的字符串<span class="token punctuation">,</span>右边第一位置往右不够<span class="token number">3</span>字长，结果为：g
+substr<span class="token punctuation">(</span>string<span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>:取右边第<span class="token number">1</span>位置起，<span class="token number">3</span>字长的字符串，结果为：ing</code></pre>
+<p><strong>substring_index函数</strong></p>
+<pre class=" language-sql"><code class="language-sql">substring_index<span class="token punctuation">(</span>A<span class="token punctuation">,</span> 分割的字符<span class="token punctuation">,</span>截取字符的位置<span class="token punctuation">)</span></code></pre>
+<p>举例：</p>
+<pre class=" language-sq;"><code class="language-sq;">substring_index('15,151,152,16',',',1)：取第一个逗号前面的字符串，结果为：15
 
 substring_index('15,151,152,16',',',2)：取第二个逗号前面部分，结果为：15,151
 
@@ -2281,36 +2501,40 @@ substring_index('15,151,152,16',',',-1)：取目标字符串中最后一个含 �
 substring_index(substring_index('15,151,152,16',',',2),',',-1):取第二个逗号前面部分,然后最后逗号的前面部分，结果为：151
 
 substring_index(substring_index('15,151,152,16',',',-2),',',1)：取倒数第二个逗号后面部分字符串，再去这部分里第一个都号前的部分，结果为：152
-</code></pre><p><strong>split函数</strong></p>
-<pre><code>split(A, 分割的字符) </code></pre><p>举例：</p>
-<pre><code>split('a,b,c,d',','):根据逗号进行分割，结果为： ["a","b","c","d"]
+</code></pre>
+<p><strong>split函数</strong></p>
+<pre class=" language-sql"><code class="language-sql">split<span class="token punctuation">(</span>A<span class="token punctuation">,</span> 分割的字符<span class="token punctuation">)</span> </code></pre>
+<p>举例：</p>
+<pre class=" language-sql"><code class="language-sql">split<span class="token punctuation">(</span><span class="token string">'a,b,c,d'</span><span class="token punctuation">,</span><span class="token string">','</span><span class="token punctuation">)</span>:根据逗号进行分割，结果为： <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span><span class="token string">"c"</span><span class="token punctuation">,</span><span class="token string">"d"</span><span class="token punctuation">]</span>
 
-split('a,b,c,d',',')[0]： 取结果数组中的某一项，结果为： a
+split<span class="token punctuation">(</span><span class="token string">'a,b,c,d'</span><span class="token punctuation">,</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>： 取结果数组中的某一项，结果为： <span class="token number">a</span>
 
-split('192.168.0.1','\\.')： 点号这种特殊字符的时候需要做特殊的处理，结果为：["192","168","0","1"]
+split<span class="token punctuation">(</span><span class="token string">'192.168.0.1'</span><span class="token punctuation">,</span><span class="token string">'\\.'</span><span class="token punctuation">)</span>： 点号这种特殊字符的时候需要做特殊的处理，结果为：<span class="token punctuation">[</span><span class="token string">"192"</span><span class="token punctuation">,</span><span class="token string">"168"</span><span class="token punctuation">,</span><span class="token string">"0"</span><span class="token punctuation">,</span><span class="token string">"1"</span><span class="token punctuation">]</span>
 
-"....  split('192.168.0.1','\\\\.') ... ": split包含在 "" 之中时 需要加4个\,不然得到的值是null
+<span class="token string">"....  split('192.168.0.1','\\\\.') ... "</span>: split包含在 <span class="token string">""</span> 之中时 需要加<span class="token number">4</span>个\<span class="token punctuation">,</span>不然得到的值是<span class="token boolean">null</span>
 
-同样的 | 等特殊符号也需要做类似 处理。
-</code></pre><p>3.区分函数之前的区别 * substr函数与 substring函数是根据截取的位置来进行分割。 * substring_index和split是根据特定的字符来进行分割。</p>
+同样的 <span class="token operator">|</span> 等特殊符号也需要做类似 处理。
+</code></pre>
+<p>3.区分函数之前的区别 * substr函数与 substring函数是根据截取的位置来进行分割。 * substring_index和split是根据特定的字符来进行分割。</p>
 <ol>
 <li>需求</li>
 </ol>
 <ul>
 <li>将一些字段拆解出来进行使用，比如：Syjh-sjsy-zygn-3_1字段，我们只需要Syjh-sjsy-zygn位置的所有按钮。</li>
 </ul>
-<pre><code>select 
-    substring_index(nbtn_position, '-',3) as position,
-    count(distinct user_account) as uv 
-from 
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+    substring_index<span class="token punctuation">(</span>nbtn_position<span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">as</span> position<span class="token punctuation">,</span>
+    <span class="token function">count</span><span class="token punctuation">(</span><span class="token keyword">distinct</span> user_account<span class="token punctuation">)</span> <span class="token keyword">as</span> uv 
+<span class="token keyword">from</span> 
     apache_computer_view
-where 
-    hit_date = '2020-03-01'
-    and 
-    nbtn_position like '%Syjh%'
-group by 
-    substring_index(nbtn_position, '-',3)
-</code></pre><hr>
+<span class="token keyword">where</span> 
+    hit_date <span class="token operator">=</span> <span class="token string">'2020-03-01'</span>
+    <span class="token operator">and</span> 
+    nbtn_position <span class="token operator">like</span> <span class="token string">'%Syjh%'</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span> 
+    substring_index<span class="token punctuation">(</span>nbtn_position<span class="token punctuation">,</span> <span class="token string">'-'</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre>
+<hr>
 <ul>
 <li>左填充与右填充</li>
 </ul>
@@ -2323,11 +2547,77 @@ group by
     nbtn_name <span class="token keyword">as</span> <span class="token string">'不填充'</span>
 <span class="token keyword">from</span> 
     table1</code></pre>
-<p><a href="https://www.notion.so/da66b81bec7f4641b1684963d33912bd" target="_blank" rel="noopener">Untitled</a></p>
+<table>
+<thead>
+<tr>
+<th>左填充</th>
+<th>右填充</th>
+<th>不填充</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xoxo张晓东</td>
+<td>张晓东xoxo</td>
+<td>张晓东</td>
+</tr>
+</tbody></table>
 <h2 id="group-by-中rollup、cube、grouping、grouping-sets用法"><a href="#group-by-中rollup、cube、grouping、grouping-sets用法" class="headerlink" title="group by 中rollup、cube、grouping、grouping sets用法"></a>group by 中rollup、cube、grouping、grouping sets用法</h2><ol>
 <li>需求背景： 通过 a1 明细表，获得每个店铺，每个城市，每个省份，每个大区以及全国5月的份的成交量情况。</li>
 </ol>
-<p><a href="https://www.notion.so/3a902118b6364a518c00af03d0876c6f" target="_blank" rel="noopener">table1</a></p>
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>shop</th>
+<th>city</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>A</td>
+<td>西安</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td>上海</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C</td>
+<td>安康</td>
+</tr>
+<tr>
+<td>4</td>
+<td>D</td>
+<td>北京</td>
+</tr>
+<tr>
+<td>5</td>
+<td>E</td>
+<td>延安</td>
+</tr>
+<tr>
+<td>6</td>
+<td>F</td>
+<td>成都</td>
+</tr>
+<tr>
+<td>7</td>
+<td>G</td>
+<td>汉中</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>H</td>
+<td>郑州</td>
+</tr>
+</tbody></table>
 <ol start="2">
 <li>解法</li>
 </ol>
@@ -2365,7 +2655,7 @@ group by
 
 <span class="token comment" spellcheck="true">---上述式中有很多 null, 这是因为 union all 拼接的两个表的列数需要相等。</span></code></pre>
 <p>结果如下：</p>
-<p><img src="https://i.loli.net/2019/06/10/5cfe6c219ca3f57084.png" alt="https://i.loli.net/2019/06/10/5cfe6c219ca3f57084.png"></p>
+<p><img src="https://i.loli.net/2019/06/10/5cfe6c219ca3f57084.png" alt="sql结果"></p>
 <p>解法3：用<code>grouping sets</code>来根据不同维度组合进行聚合</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
     <span class="token boolean">null</span><span class="token punctuation">,</span> area<span class="token punctuation">,</span> province<span class="token punctuation">,</span> city<span class="token punctuation">,</span> shop
@@ -2395,56 +2685,174 @@ grouping <span class="token keyword">set</span>
 <span class="token keyword">with rollup</span></code></pre>
 <p><code>rollup</code> 函数输出结果，不会有 <code>null, null, null, city</code> 值， 和 <code>cube</code> 的区别在于： <code>cube</code> 是维度更细的统计，假设数据有 <code>n</code> 个维度， 那么 <code>rollup</code> 会有 <code>n</code> 个聚合，<code>cube</code> 会有 <code>2n</code> 个聚合。</p>
 <h2 id="空字段赋值"><a href="#空字段赋值" class="headerlink" title="空字段赋值"></a>空字段赋值</h2><p>NVL：给值为NULL的数据赋值，格式为NVL（string1, replace_with),功能为：如果string1为null，则NVL函数返回replace_with的值，否则返回string1的值，如果两个参数都为NULL，则返回NULL。</p>
-<pre><code>select nvl(comm, -1) from student;</code></pre><h2 id="查看系统内置函数"><a href="#查看系统内置函数" class="headerlink" title="查看系统内置函数"></a>查看系统内置函数</h2><ol>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> nvl<span class="token punctuation">(</span>comm<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">from</span> student<span class="token punctuation">;</span></code></pre>
+<h2 id="查看系统内置函数"><a href="#查看系统内置函数" class="headerlink" title="查看系统内置函数"></a>查看系统内置函数</h2><ul>
 <li>查看系统自带的函数</li>
-</ol>
-<pre><code>show functions</code></pre><ol>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">show</span> functions</code></pre>
+<ul>
 <li>显示自带的函数的用户</li>
-</ol>
-<pre><code>desc function 函数名;</code></pre><ol>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">desc</span> <span class="token keyword">function</span> 函数名<span class="token punctuation">;</span></code></pre>
+<ul>
 <li>详细显示自带的函数用法</li>
-</ol>
-<pre><code>desc function extended 函数名</code></pre><h1 id="Hive避免数据倾斜"><a href="#Hive避免数据倾斜" class="headerlink" title="Hive避免数据倾斜"></a>Hive避免数据倾斜</h1><ul>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">desc</span> <span class="token keyword">function</span> <span class="token keyword">extended</span> 函数名</code></pre>
+<h1 id="Hive避免数据倾斜"><a href="#Hive避免数据倾斜" class="headerlink" title="Hive避免数据倾斜"></a>Hive避免数据倾斜</h1><ul>
 <li>数据倾斜：当我们在Hive上进行查询时，因为数据的分散度不够， 导致大量数据集中在一台或者几台服务器上， 导致数据的计算速度远远低于平均计算速度， 计算过程特别耗时。</li>
 <li>数据倾斜的表现：任务进度长时间维持在99%，查看任务监控页面，发现只有少量子任务未完成。</li>
 </ul>
-<h2 id="小表Join大表"><a href="#小表Join大表" class="headerlink" title="小表Join大表"></a>小表Join大表</h2><ul>
+<ol>
+<li><strong>小表Join大表</strong></li>
+</ol>
+<ul>
 <li>Hive 会假定查询中最后一个表是最大的表， 在对每行记录进行连续操作时， 它会尝试将其他表缓存起来，然后扫描最后那个表进行计算。因此，我们在查询时，要保证连续查询中的表的大小从左到右依次是增加的。</li>
 <li>假如，在 a, b 两个表中，b表最小， 则 写sql时需让b表在左，a表在右：</li>
 </ul>
-<pre><code>SELECT    a.price_close, b.price_closeFROM    b JOIN a ON b.ymd = a.ymd AND b.symbol = a.symbolWHERE    a.symbol = 'APPLE'---Hive支持使用/*+STREAMTALBE*/语法指定哪张表是大表， 不需要排序SELECT    /*+3`'LKLLGFG Streamtable(a)*/ a.price_close, b.price_closeFROM    a JOIN B on a.ymd = b.ymd AND a.symbol = b.symbolWHERE    a.symbol = 'Apple'</code></pre><h2 id="大表JOIN大表"><a href="#大表JOIN大表" class="headerlink" title="大表JOIN大表"></a>大表JOIN大表</h2><ol>
-<li>空key过滤 有时join超时是因为某些key对应的数据太多，而相同key对应的数据都会发送到相同的reducer上，从而导致内存不够。此时我们应该仔细分析这些异常的key，很多情况下，这些key对应的数据是异常数据，我们需要在sql语句中进行过滤。</li>
-</ol>
-<pre><code>Select  *From   a Join  bOn   a.user_id is not nullAnd   a.user_id = b.user_idUnion allSelect  * from  awhere  a.user_id is null</code></pre><ol>
-<li>空key转换 有时虽然某个key为空对应的数据很多，但是相应的数据不是异常数据，必须要包含在join的结果中，此时我们可以表a中key为空的字段赋一个随机值，是的数据随机均匀地分布到不同的reducer上。</li>
+<pre class=" language-sql"><code class="language-sql">
+
+<span class="token keyword">SELECT</span>
+    <span class="token number">a</span><span class="token punctuation">.</span>price_close<span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">.</span>price_close
+<span class="token keyword">FROM</span>
+    <span class="token number">b</span> <span class="token keyword">JOIN</span> <span class="token number">a</span> <span class="token keyword">ON</span> <span class="token number">b</span><span class="token punctuation">.</span>ymd <span class="token operator">=</span> <span class="token number">a</span><span class="token punctuation">.</span>ymd <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token number">a</span><span class="token punctuation">.</span>symbol
+<span class="token keyword">WHERE</span>
+    <span class="token number">a</span><span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token string">'APPLE'</span>
+
+
+<span class="token comment" spellcheck="true">---Hive支持使用/*+STREAMTALBE*/语法指定哪张表是大表， 不需要排序</span>
+
+<span class="token keyword">SELECT</span>
+    <span class="token comment" spellcheck="true">/*+3`'LKLLGFG Streamtable(a)*/</span> <span class="token number">a</span><span class="token punctuation">.</span>price_close<span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">.</span>price_close
+<span class="token keyword">FROM</span>
+    <span class="token number">a</span> <span class="token keyword">JOIN</span> B <span class="token keyword">on</span> <span class="token number">a</span><span class="token punctuation">.</span>ymd <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>ymd <span class="token operator">AND</span> <span class="token number">a</span><span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>symbol
+<span class="token keyword">WHERE</span>
+    <span class="token number">a</span><span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token string">'Apple'</span></code></pre>
+<ol start="2">
+<li><strong>大表JOIN大表</strong></li>
 </ol>
 <ul>
-<li>把空值的 key 变成一个字符串加上随机数，就能把倾斜的数据分到不同的 reduce 上 ,解决数据倾斜问题。</li>
-<li>需要用到Case When … Else…End语法</li>
+<li>空key过滤 </li>
+<li><ul>
+<li>有时join超时是因为某些key对应的数据太多，而相同key对应的数据都会发送到相同的reducer上，从而导致内存不够。此时我们应该仔细分析这些异常的key，很多情况下，这些key对应的数据是异常数据，我们需要在sql语句中进行过滤。</li>
 </ul>
-<pre><code>select n.*from  nullidtable n full join bigtable o oncase when n.id is null then concat('hive', rand()) else n.id end  = o.id;</code></pre><h2 id="count-distinct-去重统计"><a href="#count-distinct-去重统计" class="headerlink" title="count(distinct) 去重统计"></a>count(distinct) 去重统计</h2><ul>
+</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">Select</span>
+    <span class="token operator">*</span>
+<span class="token keyword">From</span> 
+    <span class="token number">a</span> <span class="token keyword">Join</span>  <span class="token number">b</span>
+<span class="token keyword">On</span>
+     <span class="token number">a</span><span class="token punctuation">.</span>user_id <span class="token operator">is</span> <span class="token operator">not</span> <span class="token boolean">null</span>
+<span class="token operator">And</span> 
+    <span class="token number">a</span><span class="token punctuation">.</span>user_id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>user_id
+<span class="token keyword">Union</span> <span class="token keyword">all</span>
+<span class="token keyword">Select</span>
+    <span class="token operator">*</span> 
+<span class="token keyword">from</span>
+    <span class="token number">a</span>
+<span class="token keyword">where</span>
+    <span class="token number">a</span><span class="token punctuation">.</span>user_id <span class="token operator">is</span> <span class="token boolean">null</span></code></pre>
+<ul>
+<li>空key转换 </li>
+<li><ul>
+<li>有时虽然某个key为空对应的数据很多，但是相应的数据不是异常数据，必须要包含在join的结果中，此时我们可以表a中key为空的字段赋一个随机值，是的数据随机均匀地分布到不同的reducer上。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>把空值的 key 变成一个字符串加上随机数，就能把倾斜的数据分到不同的 reduce 上 ,解决数据倾斜问题。<br> 需要用到Case When … Else…End语法</p>
+</blockquote>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> n<span class="token punctuation">.</span><span class="token operator">*</span>
+<span class="token keyword">from</span>  nullidtable n <span class="token keyword">full</span> <span class="token keyword">join</span> bigtable o <span class="token keyword">on</span>
+<span class="token keyword">case</span> <span class="token keyword">when</span> n<span class="token punctuation">.</span>id <span class="token operator">is</span> <span class="token boolean">null</span> <span class="token keyword">then</span> concat<span class="token punctuation">(</span><span class="token string">'hive'</span><span class="token punctuation">,</span> rand<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">else</span> n<span class="token punctuation">.</span>id <span class="token keyword">end</span>  <span class="token operator">=</span> o<span class="token punctuation">.</span>id<span class="token punctuation">;</span></code></pre>
+<ol start="3">
+<li><strong>count(distinct) 去重统计</strong></li>
+</ol>
+<ul>
 <li>数据量大时，由于count distinct 操作需要用一个 reduce task 来完成， 这一个reduce 需要处理的数据量太大，会导致整个job很难完成，一般 count distinct 使用先group by 再 count的方式替换。</li>
 </ul>
-<pre><code>select count(distinct id) from bigtableselect count(id) from (select id from bigtable group by id) a</code></pre><h2 id="避免笛卡尔积"><a href="#避免笛卡尔积" class="headerlink" title="避免笛卡尔积"></a>避免笛卡尔积</h2><p>尽量避免产生笛卡尔积，如join时不加on条件，或无效的on条件。hive只能使用1个reducer来完成笛卡尔积</p>
-<h2 id="行列过滤"><a href="#行列过滤" class="headerlink" title="行列过滤"></a>行列过滤</h2><ol>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token keyword">distinct</span> id<span class="token punctuation">)</span> <span class="token keyword">from</span> bigtable
+
+<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token keyword">from</span> <span class="token punctuation">(</span><span class="token keyword">select</span> id <span class="token keyword">from</span> bigtable <span class="token keyword">group</span> <span class="token keyword">by</span> id<span class="token punctuation">)</span> <span class="token number">a</span></code></pre>
+<ol start="4">
+<li><strong>避免笛卡尔积</strong></li>
+</ol>
+<p>尽量避免产生笛卡尔积，如join时不加on条件，或无效的on条件。hive只能使用1个reducer来完成笛卡尔积</p>
+<ol start="5">
+<li><strong>行列过滤</strong></li>
+</ol>
+<ul>
 <li>列处理： 在查询中， 避免使用 select *, 使用条件限制取需要的列。</li>
 <li>行处理： 在分区剪裁中，当使用join外关联时，如果将副表的过滤条件写在where后面，那么就会先全表关联，之后再过滤, 这样会耗费资源。</li>
+</ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> o<span class="token punctuation">.</span>id <span class="token keyword">from</span> bigtable <span class="token number">b</span> 
+<span class="token keyword">join</span> ori o <span class="token keyword">on</span><span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>id 
+<span class="token keyword">where</span> o<span class="token punctuation">.</span>id <span class="token operator">&lt;=</span><span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword">select</span> <span class="token number">b</span><span class="token punctuation">.</span>id <span class="token keyword">from</span> bigtable <span class="token number">b</span>
+<span class="token keyword">join</span> <span class="token punctuation">(</span><span class="token keyword">select</span> id <span class="token keyword">from</span> ori <span class="token keyword">where</span> id <span class="token operator">&lt;=</span><span class="token number">10</span><span class="token punctuation">)</span> o <span class="token keyword">on</span> <span class="token number">b</span><span class="token punctuation">.</span>id <span class="token operator">=</span> o<span class="token punctuation">.</span>id<span class="token punctuation">)</span></code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
+    <span class="token number">a</span><span class="token punctuation">.</span>price_close<span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">.</span>price_close
+<span class="token keyword">FROM</span>
+    <span class="token number">b</span> <span class="token keyword">JOIN</span> <span class="token number">a</span> <span class="token keyword">ON</span> <span class="token number">b</span><span class="token punctuation">.</span>ymd <span class="token operator">=</span> <span class="token number">a</span><span class="token punctuation">.</span>ymd <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token number">a</span><span class="token punctuation">.</span>symbol
+<span class="token keyword">WHERE</span>
+    s<span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token string">'APPLE'</span>
+
+
+<span class="token comment" spellcheck="true">--正确的写法是将 where 条件写在 on 后面</span>
+<span class="token keyword">SELECT</span>
+    <span class="token number">a</span><span class="token punctuation">.</span>price_close<span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">.</span>price_close
+<span class="token keyword">FROM</span>
+    <span class="token number">b</span> <span class="token keyword">JOIN</span> <span class="token number">a</span> <span class="token keyword">ON</span> <span class="token punctuation">(</span> <span class="token number">b</span><span class="token punctuation">.</span>ymd <span class="token operator">=</span> <span class="token number">a</span><span class="token punctuation">.</span>ymd <span class="token operator">AND</span> <span class="token number">b</span><span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token number">a</span><span class="token punctuation">.</span>symbol <span class="token operator">and</span> s<span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token string">'APPLE'</span></code></pre>
+<ol start="6">
+<li><strong>union all 子查询避免中使用 group by等</strong></li>
 </ol>
-<pre><code>select o.id from bigtable b join ori o on.id = b.id where o.id &lt;=10;select b.id from bigtable bjoin (select id from ori where id &lt;=10) o on b.id = o.id)</code></pre><pre><code>SELECT    a.price_close, b.price_closeFROM    b JOIN a ON b.ymd = a.ymd AND b.symbol = a.symbolWHERE    s.symbol = 'APPLE'--正确的写法是将 where 条件写在 on 后面SELECT    a.price_close, b.price_closeFROM    b JOIN a ON ( b.ymd = a.ymd AND b.symbol = a.symbol and s.symbol = 'APPLE'</code></pre><h2 id="union-all-子查询避免中使用-group-by等"><a href="#union-all-子查询避免中使用-group-by等" class="headerlink" title="union all 子查询避免中使用 group by等"></a>union all 子查询避免中使用 group by等</h2><ul>
+<ul>
 <li>union all 子查询避免中使用 group by【替换 count(distinct) 除外】、count(distinct)、max、min等。</li>
 </ul>
-<pre><code>with a1 as (        select            user_account,            hit_date        from            data        where            hit_date between '2018-12-01' and '2018-12-13'            and            nbtn_name like "%支付宝%"        union all         select            user_account,            hit_date        from            data        where            hit_date between '2018-12-01' and '2018-12-13'        and        nbtn_name like "%支付宝%")select    hit_date,    count(user_account) as pvfrom    a1group by    hit_date</code></pre><h2 id="避免不同数据类型进行关联"><a href="#避免不同数据类型进行关联" class="headerlink" title="避免不同数据类型进行关联"></a>避免不同数据类型进行关联</h2><ul>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">with</span> <span class="token number">a1</span> <span class="token keyword">as</span> <span class="token punctuation">(</span>
+        <span class="token keyword">select</span>
+            user_account<span class="token punctuation">,</span>
+            hit_date
+        <span class="token keyword">from</span>
+            <span class="token keyword">data</span>
+        <span class="token keyword">where</span>
+            hit_date <span class="token operator">between</span> <span class="token string">'2018-12-01'</span> <span class="token operator">and</span> <span class="token string">'2018-12-13'</span>
+            <span class="token operator">and</span>
+            nbtn_name <span class="token operator">like</span> <span class="token string">"%支付宝%"</span>
+        <span class="token keyword">union</span> <span class="token keyword">all</span> 
+        <span class="token keyword">select</span>
+            user_account<span class="token punctuation">,</span>
+            hit_date
+        <span class="token keyword">from</span>
+            <span class="token keyword">data</span>
+        <span class="token keyword">where</span>
+            hit_date <span class="token operator">between</span> <span class="token string">'2018-12-01'</span> <span class="token operator">and</span> <span class="token string">'2018-12-13'</span>
+        <span class="token operator">and</span>
+        nbtn_name <span class="token operator">like</span> <span class="token string">"%支付宝%"</span><span class="token punctuation">)</span>
+<span class="token keyword">select</span>
+    hit_date<span class="token punctuation">,</span>
+    <span class="token function">count</span><span class="token punctuation">(</span>user_account<span class="token punctuation">)</span> <span class="token keyword">as</span> pv
+<span class="token keyword">from</span>
+    <span class="token number">a1</span>
+<span class="token keyword">group</span> <span class="token keyword">by</span>
+    hit_date</code></pre>
+<ol start="7">
+<li><strong>避免不同数据类型进行关联</strong></li>
+</ol>
+<ul>
 <li>使用CAST函数对数据类型进行转换，语法为cast(value AS TYPE)</li>
 </ul>
-<pre><code>select 
-    a.price_close,
-    b.price_close
-from
-    a join b  on a.user_id = cast(b.user_id as string)
-where
-    hit_date between '2018-11-01' and '2018-11-02'
-    and 
-    a.symbol = 'apple'</code></pre><p>Hive的查询注意事项以及优化总结： 1. 尽量尽早过滤数据，减少每个阶段的数据量。对于分区表要加分区，同时只选择需要使用到的字段</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> 
+    <span class="token number">a</span><span class="token punctuation">.</span>price_close<span class="token punctuation">,</span>
+    <span class="token number">b</span><span class="token punctuation">.</span>price_close
+<span class="token keyword">from</span>
+    <span class="token number">a</span> <span class="token keyword">join</span> <span class="token number">b</span>  <span class="token keyword">on</span> <span class="token number">a</span><span class="token punctuation">.</span>user_id <span class="token operator">=</span> cast<span class="token punctuation">(</span><span class="token number">b</span><span class="token punctuation">.</span>user_id <span class="token keyword">as</span> string<span class="token punctuation">)</span>
+<span class="token keyword">where</span>
+    hit_date <span class="token operator">between</span> <span class="token string">'2018-11-01'</span> <span class="token operator">and</span> <span class="token string">'2018-11-02'</span>
+    <span class="token operator">and</span> 
+    <span class="token number">a</span><span class="token punctuation">.</span>symbol <span class="token operator">=</span> <span class="token string">'apple'</span></code></pre>
+<p>Hive的查询注意事项以及优化总结： 1. 尽量尽早过滤数据，减少每个阶段的数据量。对于分区表要加分区，同时只选择需要使用到的字段</p>
 <ol>
 <li>对历史库的计算经验</li>
 <li>尽量原子化操作，尽量避免一个SQL包含复杂逻辑，可以使用中间表来完成复杂的逻辑</li>
@@ -2457,23 +2865,59 @@ where
 <li>首先， 用Python连接数据库</li>
 </ol>
 <p>对于数据库的ip地址，用户名，密码等， 如果不清楚，或数据库连接不上， 需要和开发人员对接</p>
-<pre><code>from pyhive import hive import timeconn = hive.Connection(host='ip地址', port=10000, username='用户名', database = 'default', auth='NOSASL')cursor = conn.cursor()# 获得连接的游标</code></pre><ol>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> pyhive <span class="token keyword">import</span> hive 
+
+<span class="token keyword">import</span> time
+
+conn <span class="token operator">=</span> hive<span class="token punctuation">.</span>Connection<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'ip地址'</span><span class="token punctuation">,</span> port<span class="token operator">=</span><span class="token number">10000</span><span class="token punctuation">,</span> username<span class="token operator">=</span><span class="token string">'用户名'</span><span class="token punctuation">,</span> database <span class="token operator">=</span> <span class="token string">'default'</span><span class="token punctuation">,</span> auth<span class="token operator">=</span><span class="token string">'NOSASL'</span><span class="token punctuation">)</span>
+
+cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 获得连接的游标</span>
+</code></pre>
+<ol start="2">
 <li>设置开始和结束时间 可以用python中的time函数设置时间</li>
 </ol>
-<pre><code>startdate = '2018-09-01'enddate   = '2018-09-19'</code></pre><ol>
-<li>用Python中的format函数将日期传入{}中</li>
-</ol>
+<pre class=" language-python"><code class="language-python">startdate <span class="token operator">=</span> <span class="token string">'2018-09-01'</span>
+enddate   <span class="token operator">=</span> <span class="token string">'2018-09-19'</span></code></pre>
+<ol start="3">
+<li><p>用Python中的format函数将日期传入{}中</p>
 <ul>
-<li>python中写sql脚本时， 需要用, 。</li>
-<li>日期用两个{}来代替， 用format函数将开始日期与结束日期传入</li>
+<li><p>python中写sql脚本时， 需要用\来进行换行符的转换, \后面不能有空格。</p>
+</li>
+<li><p>日期用两个{}来代替， 用format函数将开始日期与结束日期传入</p>
+</li>
 </ul>
-<pre><code># 提取积分类uv,pv数据sql_jifenxinxi_an = """select    count(distinct user_account) as uv,    count(1) as pv from    computer_view.data where    hit_date between "{}" and "{}"    and    (btn_position like "服务-查询-积分信息%"    or    btn_home = "积分-扇形左"    ) limit 1000""".format(startdate,enddate)# format 插入时间cursor.execute(sql_jifenxinxi_an)# 运行此语句cursor.fetchall()#fetchall():接收全部的返回结果行.</code></pre><p>我们可以按照这个格式写工作中需要运行的多个SQL语句。 这样， 当脚本运行的时候， 我们可以腾出时间来去干其他工作， 等过一段时间，所有的SQL语句都跑完了， 我们再进行统一的整理。</p>
+</li>
+</ol>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 提取积分类uv,pv数据</span>
+
+sql_jifenxinxi_an <span class="token operator">=</span> <span class="token triple-quoted-string string">"""select 
+    count(distinct user_account) as uv, 
+    count(1) as pv 
+from 
+    computer_view.data 
+where 
+    hit_date between "{}" and "{}" 
+    and 
+    (btn_position like "服务-查询-积分信息%" 
+    or 
+    btn_home = "积分-扇形左" 
+    ) 
+limit 1000"""</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>startdate<span class="token punctuation">,</span>enddate<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># format 插入时间</span>
+
+cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>sql_jifenxinxi_an<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 运行此语句</span>
+
+
+cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#fetchall():接收全部的返回结果行.</span>
+</code></pre>
+<p>我们可以按照这个格式写工作中需要运行的多个SQL语句。 这样， 当脚本运行的时候， 我们可以腾出时间来去干其他工作， 等过一段时间，所有的SQL语句都跑完了， 我们再进行统一的整理。</p>
 <hr>
 <h1 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h1><p><a href="https://mp.weixin.qq.com/s/Xw5DOHHGh838w8YXT9lO5g" target="_blank" rel="noopener">讲讲 group 的plus版-张俊红</a></p>
-<hr>
-<hr>
-<p><a href="https://www.youtube.com/embed/f3uqAVsOxsM" target="_blank" rel="noopener">https://www.youtube.com/embed/f3uqAVsOxsM</a></p>
-<script>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9otkcuic-2o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -2662,7 +3106,7 @@ where
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python-Pandas库学习
+                            Python数据处理常见用法
                         
                     </div>
                     <div class="publish-info">
