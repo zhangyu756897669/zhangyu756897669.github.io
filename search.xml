@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>搭建运营指标体系</title>
+      <link href="/2020/06/22/da-jian-yun-ying-zhi-biao-ti-xi/"/>
+      <url>/2020/06/22/da-jian-yun-ying-zhi-biao-ti-xi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-规划数据指标体系"><a href="#1-规划数据指标体系" class="headerlink" title="1. 规划数据指标体系"></a>1. 规划数据指标体系</h1><h2 id="osm模型"><a href="#osm模型" class="headerlink" title="osm模型"></a>osm模型</h2><ol><li><p><strong>业务目标</strong><br>功能存的的目的是什么，能够解决用户的什么问题、满足用户的什么需求？</p></li><li><p><strong>业务策略</strong><br>为达到以上目标，应采取什么业务策略</p></li><li><p><strong>业务度量</strong><br>行亮策略是否有效，反映目标达成情况</p></li></ol><ul><li>KPI</li><li>给出预期值，判断是否达到预期。 </li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分析思维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 分析思维 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用的分析思维模型与方法</title>
+      <link href="/2020/06/21/chang-jian-de-fen-xi-mo-xing/"/>
+      <url>/2020/06/21/chang-jian-de-fen-xi-mo-xing/</url>
+      
+        <content type="html"><![CDATA[<h1 id="分析思维模型"><a href="#分析思维模型" class="headerlink" title="分析思维模型"></a>分析思维模型</h1><h2 id="AARRR模型"><a href="#AARRR模型" class="headerlink" title="AARRR模型"></a>AARRR模型</h2><p>用户获取-用户转化-用户留存-产生收入-用户传播<br>渠道运营分析-冷启动运营分析-留存率提升分析-商业化效率分析-产品列表运营分析</p><p><img src="https://i.loli.net/2019/02/26/5c75582b87a7c.png" alt="AARRR 模型"></p><p><img src="https://i.loli.net/2019/03/23/5c95c95929a40.jpg" alt="AARRR 模型"></p><h2 id="RFM模型"><a href="#RFM模型" class="headerlink" title="RFM模型"></a>RFM模型</h2><p>最近一次消费时间-消费频率-消费金额</p><p><img src="https://pic3.zhimg.com/v2-9e63f98ebdb73af3eae7dc99d195eb42_r.jpg" alt="RFM模型"></p><p><img src="https://i.loli.net/2019/02/23/5c70f7f128f4c.png" alt="RFM用户分群"></p><p><img src="https://i.loli.net/2020/06/21/P3AtkBd1VneoFCE.png" alt="针对性运营"></p><ul><li>通过数据标准化和权重设置，可从分类模型变成打分模型。权重设置,M最重要，F次之，R最弱。</li><li>分值定界有多种方法，往往是用中位数法。</li><li>最近一次消费时间一般是周/双周，F和M往往统计周期是月。</li><li>本质是筛选头部走点客户重点运营。 </li></ul><h2 id="5W2H模型"><a href="#5W2H模型" class="headerlink" title="5W2H模型"></a>5W2H模型</h2><p>what-why-where-when-who-how-how much<br>何事-何因-何地-何时-何人-如何做-何家</p><p><img src="https://i.loli.net/2019/02/26/5c7418d10b4c8.png" alt="思维导图"></p><p><img src="https://i.loli.net/2019/08/19/lIgkeLbfNXtDHOu.jpg" alt="6W2H"></p><h2 id="用户生命周期模型"><a href="#用户生命周期模型" class="headerlink" title="用户生命周期模型"></a>用户生命周期模型</h2><p><img src="https://i.loli.net/2019/03/23/5c95c9d2e937c.jpg" alt="用户生命周期模型"></p><p><img src="https://i.loli.net/2019/03/23/5c95ca1b5fdc9.jpg" alt="对应的关键指标"></p><h2 id="SWOT模型"><a href="#SWOT模型" class="headerlink" title="SWOT模型"></a>SWOT模型</h2><p>优势-劣势-机会-威胁</p><p><img src="https://i.loli.net/2019/02/26/5c754bb2536a0.jpg" alt="对自己进行解析"><br><img src="https://i.loli.net/2019/02/26/5c754bc095f85.jpg" alt="指定相应的对策"></p><h1 id="分析思维方法"><a href="#分析思维方法" class="headerlink" title="分析思维方法"></a>分析思维方法</h1><h2 id="对比分析法"><a href="#对比分析法" class="headerlink" title="对比分析法"></a>对比分析法</h2><h2 id="维度拆解法"><a href="#维度拆解法" class="headerlink" title="维度拆解法"></a>维度拆解法</h2><h2 id="漏斗分析法"><a href="#漏斗分析法" class="headerlink" title="漏斗分析法"></a>漏斗分析法</h2><h2 id="时间序列趋势分析"><a href="#时间序列趋势分析" class="headerlink" title="时间序列趋势分析"></a>时间序列趋势分析</h2><h2 id="公式分析法"><a href="#公式分析法" class="headerlink" title="公式分析法"></a>公式分析法</h2><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分析思维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 分析思维 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>技能-Hive-SQL学习</title>
       <link href="/2020/06/19/hive-sql-zhi-shi-dian-zong-jie/"/>
       <url>/2020/06/19/hive-sql-zhi-shi-dian-zong-jie/</url>
