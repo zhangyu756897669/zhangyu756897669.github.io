@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangyu756897669.github.io/"/>
-  <updated>2020-06-21T15:32:42.207Z</updated>
+  <updated>2020-07-12T12:35:25.137Z</updated>
   <id>https://zhangyu756897669.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>搭建运营指标体系</title>
-    <link href="https://zhangyu756897669.github.io/2020/06/22/da-jian-yun-ying-zhi-biao-ti-xi/"/>
-    <id>https://zhangyu756897669.github.io/2020/06/22/da-jian-yun-ying-zhi-biao-ti-xi/</id>
-    <published>2020-06-21T16:00:00.000Z</published>
-    <updated>2020-06-21T15:32:42.207Z</updated>
+    <title>英语学习</title>
+    <link href="https://zhangyu756897669.github.io/2020/07/12/ying-yu-xue-xi/"/>
+    <id>https://zhangyu756897669.github.io/2020/07/12/ying-yu-xue-xi/</id>
+    <published>2020-07-12T01:25:00.000Z</published>
+    <updated>2020-07-12T12:35:25.137Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,99 @@
       
         
         
-          &lt;h1 id=&quot;1-规划数据指标体系&quot;&gt;&lt;a href=&quot;#1-规划数据指标体系&quot; class=&quot;headerlink&quot; title=&quot;1. 规划数据指标体系&quot;&gt;&lt;/a&gt;1. 规划数据指标体系&lt;/h1&gt;&lt;h2 id=&quot;osm模型&quot;&gt;&lt;a href=&quot;#osm模型&quot;
+          &lt;ol&gt;
+&lt;li&gt;This Is What Happens When You Ignore Your Girlfriend’s Texts&lt;/li&gt;
+&lt;/ol&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;525&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="English" scheme="https://zhangyu756897669.github.io/categories/English/"/>
+    
+    
+      <category term="English" scheme="https://zhangyu756897669.github.io/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL面试题</title>
+    <link href="https://zhangyu756897669.github.io/2020/07/10/sql-mian-shi-ti/"/>
+    <id>https://zhangyu756897669.github.io/2020/07/10/sql-mian-shi-ti/</id>
+    <published>2020-07-09T16:00:00.000Z</published>
+    <updated>2020-07-10T07:51:08.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;有两个数据表，通过sql实现下面题目&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/07/10/HbFNojcuB2x4197.jpg&quot; alt=&quot;sql面试1.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;问题1答案：
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SQL" scheme="https://zhangyu756897669.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL" scheme="https://zhangyu756897669.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>业务面试题</title>
+    <link href="https://zhangyu756897669.github.io/2020/07/10/ye-wu-mian-shi-ti/"/>
+    <id>https://zhangyu756897669.github.io/2020/07/10/ye-wu-mian-shi-ti/</id>
+    <published>2020-07-09T16:00:00.000Z</published>
+    <updated>2020-07-10T07:46:25.730Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;某APP 7月份DAU比同年5月份上涨了10%，作为数据分析师，你会从哪些方面分析DAU增长的原因？ 请列举至少两种以上拆分思路。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script&gt;
+       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SQL" scheme="https://zhangyu756897669.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL" scheme="https://zhangyu756897669.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建运营指标体系</title>
+    <link href="https://zhangyu756897669.github.io/2020/06/22/da-jian-yun-ying-zhi-biao-ti-xi/"/>
+    <id>https://zhangyu756897669.github.io/2020/06/22/da-jian-yun-ying-zhi-biao-ti-xi/</id>
+    <published>2020-06-21T16:00:00.000Z</published>
+    <updated>2020-07-10T07:46:12.778Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;为什么要搭建数据指标体系&quot;&gt;&lt;a href=&quot;#为什么要搭建数据指标体系&quot; class=&quot;headerlink&quot;
         
       
     
@@ -48,7 +140,7 @@
     <link href="https://zhangyu756897669.github.io/2020/06/21/chang-jian-de-fen-xi-mo-xing/"/>
     <id>https://zhangyu756897669.github.io/2020/06/21/chang-jian-de-fen-xi-mo-xing/</id>
     <published>2020-06-20T16:00:00.000Z</published>
-    <updated>2020-06-21T09:41:07.109Z</updated>
+    <updated>2020-07-06T14:54:19.452Z</updated>
     
     <summary type="html">
     
