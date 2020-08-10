@@ -265,7 +265,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.pinimg.com/originals/0f/60/19/0f6019e15f1d8ae07e7e8ea16d242676.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2743748018,437360056&fm=26&gp=0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -428,7 +428,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="读取与写入Excel数据"><a href="#读取与写入Excel数据" class="headerlink" title="读取与写入Excel数据"></a>读取与写入Excel数据</h1><ul>
+                <h2 id="读取与写入Excel数据"><a href="#读取与写入Excel数据" class="headerlink" title="读取与写入Excel数据"></a>读取与写入Excel数据</h2><ul>
 <li><a href="https://blog.csdn.net/m0_37693335/article/details/81474995" target="_blank" rel="noopener">相对路径与绝对路径</a></li>
 </ul>
 <ol>
@@ -661,7 +661,7 @@ data.to_excel(outputfile, index=False)
 ``` -->
 
 
-<h1 id="描述数据"><a href="#描述数据" class="headerlink" title="描述数据"></a>描述数据</h1><ol>
+<h2 id="描述数据"><a href="#描述数据" class="headerlink" title="描述数据"></a>描述数据</h2><ol>
 <li>表信息</li>
 </ol>
 <pre class=" language-python"><code class="language-python">df<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
@@ -745,7 +745,7 @@ type<span class="token punctuation">(</span><span class="token punctuation">)</s
 16.  获取数据分布情况
 
 ```python
-data.describe()</code></pre><h1 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h1><ol>
+data.describe()</code></pre><h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><ol>
 <li><p>删除空值 （dropna函数）</p>
 <p>  <a href="https://blog.csdn.net/yuanxiang01/article/details/78738812" target="_blank" rel="noopener">DataFrame中的空值处理</a></p>
 </li>
@@ -872,7 +872,7 @@ df<span class="token punctuation">[</span><span class="token string">'ID'</span>
 
 df<span class="token punctuation">.</span>columns<span class="token punctuation">.</span>str<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token string">'_'</span><span class="token punctuation">)</span>
 </code></pre>
-<h1 id="对数据进行处理"><a href="#对数据进行处理" class="headerlink" title="对数据进行处理"></a>对数据进行处理</h1><ol>
+<h2 id="对数据进行处理"><a href="#对数据进行处理" class="headerlink" title="对数据进行处理"></a>对数据进行处理</h2><ol>
 <li>对两个数据进行合并- merge, join, concat函数</li>
 </ol>
 <ul>
@@ -1003,7 +1003,7 @@ for i in a :
 df['cnts'].round( decimals = 2)</code></pre><ol start="8">
 <li>将 list 格式转化成 DataFrame 格式</li>
 </ol>
-<pre><code>df = pd.DataFrame(data, columns = ['省份', '按钮名称', 'uv', 'pv'] )</code></pre><h1 id="数据选择"><a href="#数据选择" class="headerlink" title="数据选择"></a>数据选择</h1><ol>
+<pre><code>df = pd.DataFrame(data, columns = ['省份', '按钮名称', 'uv', 'pv'] )</code></pre><h2 id="数据选择"><a href="#数据选择" class="headerlink" title="数据选择"></a>数据选择</h2><ol>
 <li>选择某一列/ 某几列</li>
 </ol>
 <pre class=" language-python"><code class="language-python">
@@ -1099,7 +1099,7 @@ df<span class="token punctuation">[</span><span class="token string">'级别'</s
 df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>df<span class="token punctuation">[</span><span class="token string">'级别'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>isin<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'A3'</span><span class="token punctuation">,</span><span class="token string">'M4'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
 </code></pre>
 <hr>
-<h1 id="数据汇总"><a href="#数据汇总" class="headerlink" title="数据汇总"></a>数据汇总</h1><ol>
+<h2 id="数据汇总"><a href="#数据汇总" class="headerlink" title="数据汇总"></a>数据汇总</h2><ol>
 <li>对数据进行分类 - group by函数</li>
 </ol>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 按照某列分组求和</span>
@@ -1254,7 +1254,7 @@ df<span class="token punctuation">.</span>melt<span class="token punctuation">(<
 <span class="token comment" spellcheck="true"># 在保持行索引不变的前提下，将列索引转化成行索引 </span></code></pre>
 <p><img src="https://i.loli.net/2019/12/22/4pKoUMivFNIqzXu.jpg" alt="宽表转换成长表"></p>
 <hr>
-<h1 id="对字符串进行操作"><a href="#对字符串进行操作" class="headerlink" title="对字符串进行操作"></a>对字符串进行操作</h1><ol>
+<h2 id="对字符串进行操作"><a href="#对字符串进行操作" class="headerlink" title="对字符串进行操作"></a>对字符串进行操作</h2><ol>
 <li>大小写</li>
 </ol>
 <pre><code>a.lower()
@@ -1309,7 +1309,7 @@ df<span class="token punctuation">[</span><span class="token string">'省份_名
 首页jdt_1<span class="token punctuation">[</span><span class="token string">'省份_标题'</span><span class="token punctuation">]</span> <span class="token operator">=</span> 首页jdt_1<span class="token punctuation">[</span><span class="token string">'所属省份编码'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">.</span>str<span class="token punctuation">.</span>cat<span class="token punctuation">(</span>首页jdt_1<span class="token punctuation">[</span><span class="token string">'标题'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>sep <span class="token operator">=</span> <span class="token string">'_'</span><span class="token punctuation">)</span>
 
 </code></pre>
-<h1 id="日期-时间"><a href="#日期-时间" class="headerlink" title="日期-时间"></a>日期-时间</h1><ul>
+<h2 id="日期-时间"><a href="#日期-时间" class="headerlink" title="日期-时间"></a>日期-时间</h2><ul>
 <li>当前日期</li>
 </ul>
 <pre class=" language-python"><code class="language-python">
@@ -1617,7 +1617,7 @@ from email import encoders
                 <a href="/2018/09/07/hello-world/">
                     <div class="card-image">
                         
-                        <img src="https://miro.medium.com/max/1400/1*KUy_KKExZrSpBuv9XfyBgA.png" class="responsive-img" alt="Hello World">
+                        <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3790635636,3629420152&fm=26&gp=0.jpg" class="responsive-img" alt="Hello World">
                         
                         <span class="card-title">Hello World</span>
                     </div>
