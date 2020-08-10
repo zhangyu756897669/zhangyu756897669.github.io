@@ -45,11 +45,45 @@
   </entry>
   
   <entry>
+    <title>SQL面试题</title>
+    <link href="https://zhangyu756897669.github.io/2020/07/10/sql-mian-shi-ti/"/>
+    <id>https://zhangyu756897669.github.io/2020/07/10/sql-mian-shi-ti/</id>
+    <published>2020-07-09T16:00:00.000Z</published>
+    <updated>2020-08-10T06:43:19.640Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;有两个数据表，通过sql实现下面题目&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/07/10/HbFNojcuB2x4197.jpg&quot; alt=&quot;sql面试1.jpg&quot;&gt;&lt;/p&gt;
+&lt;!-- 
+
+
+问题1答案：
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SQL" scheme="https://zhangyu756897669.github.io/categories/SQL/"/>
+    
+    
+      <category term="SQL" scheme="https://zhangyu756897669.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常用的分析思维模型与方法</title>
-    <link href="https://zhangyu756897669.github.io/2020/06/21/chang-jian-de-fen-xi-mo-xing/"/>
-    <id>https://zhangyu756897669.github.io/2020/06/21/chang-jian-de-fen-xi-mo-xing/</id>
-    <published>2020-06-20T16:00:00.000Z</published>
-    <updated>2020-07-06T14:54:19.452Z</updated>
+    <link href="https://zhangyu756897669.github.io/2020/06/03/chang-jian-de-fen-xi-mo-xing/"/>
+    <id>https://zhangyu756897669.github.io/2020/06/03/chang-jian-de-fen-xi-mo-xing/</id>
+    <published>2020-06-02T16:00:00.000Z</published>
+    <updated>2020-08-03T17:58:22.357Z</updated>
     
     <summary type="html">
     
@@ -73,10 +107,10 @@
   
   <entry>
     <title>技能-Hive-SQL学习</title>
-    <link href="https://zhangyu756897669.github.io/2020/06/19/ji-neng-hive-sql-xue-xi/"/>
-    <id>https://zhangyu756897669.github.io/2020/06/19/ji-neng-hive-sql-xue-xi/</id>
-    <published>2020-06-18T16:00:00.000Z</published>
-    <updated>2020-07-29T17:04:43.216Z</updated>
+    <link href="https://zhangyu756897669.github.io/2020/06/02/ji-neng-hive-sql-xue-xi/"/>
+    <id>https://zhangyu756897669.github.io/2020/06/02/ji-neng-hive-sql-xue-xi/</id>
+    <published>2020-06-01T16:00:00.000Z</published>
+    <updated>2020-08-03T17:54:20.099Z</updated>
     
     <summary type="html">
     
@@ -123,27 +157,6 @@
     
     
       <category term="Python" scheme="https://zhangyu756897669.github.io/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>思考系统</title>
-    <link href="https://zhangyu756897669.github.io/2019/09/07/tong-yong-si-kao-neng-li-si-kao-xi-tong/"/>
-    <id>https://zhangyu756897669.github.io/2019/09/07/tong-yong-si-kao-neng-li-si-kao-xi-tong/</id>
-    <published>2019-09-07T01:25:00.000Z</published>
-    <updated>2020-07-28T05:11:03.866Z</updated>
-    
-    <summary type="html">
-    
-      批判性思维-结构化思维-解决问题思维学习总结。
-    
-    </summary>
-    
-    
-      <category term="个人系统" scheme="https://zhangyu756897669.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="逻辑" scheme="https://zhangyu756897669.github.io/tags/%E9%80%BB%E8%BE%91/"/>
     
   </entry>
   

@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-19
+                    2020-06-02
                 </div>
                 
 
@@ -712,11 +712,23 @@ code <span class="token keyword">asc</span><span class="token punctuation">,</sp
 </li>
 </ul>
 <ol start="11">
-<li>对数据进行限制-limit<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span>
+<li><p>对数据进行限制-limit</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span>
 account
 <span class="token keyword">from</span> 
 employees
 <span class="token keyword">limit</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">---使用limit语句限制返回的行数，只显示 10 行</span>
+<span class="token keyword">limit</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token comment" spellcheck="true">--获取第2行（不包含第2行），以后的3行数据</span></code></pre>
+</li>
+<li><p>注释</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">/</span><span class="token operator">*</span>
+大段文字注释
+<span class="token operator">/</span><span class="token operator">*</span>
+<span class="token keyword">select</span>
+account
+<span class="token keyword">from</span> 
+employees
+<span class="token keyword">limit</span> <span class="token number">10</span> <span class="token comment" spellcheck="true">---使用limit语句限制返回的行数，只显示 10 行， 对某一行进行注释</span>
 <span class="token keyword">limit</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token comment" spellcheck="true">--获取第2行（不包含第2行），以后的3行数据</span></code></pre>
 </li>
 </ol>
@@ -863,7 +875,8 @@ employees
 </li>
 </ol>
 <ul>
-<li>比较运算符<table>
+<li><p>比较运算符</p>
+<table>
 <thead>
 <tr>
 <th><strong>操作符</strong></th>
@@ -3625,7 +3638,7 @@ cursor<span class="token punctuation">.</span>fetchall<span class="token punctua
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhangyu756897669.github.io/2020/06/19/ji-neng-hive-sql-xue-xi/">https://zhangyu756897669.github.io/2020/06/19/ji-neng-hive-sql-xue-xi/</a>
+                    <a href="https://zhangyu756897669.github.io/2020/06/02/ji-neng-hive-sql-xue-xi/">https://zhangyu756897669.github.io/2020/06/02/ji-neng-hive-sql-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -3710,7 +3723,7 @@ cursor<span class="token punctuation">.</span>fetchall<span class="token punctua
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/21/chang-jian-de-fen-xi-mo-xing/">
+                <a href="/2020/06/03/chang-jian-de-fen-xi-mo-xing/">
                     <div class="card-image">
                         
                         <img src="https://www.madewill.com/wp-content/uploads/2020/03/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%A1%86%E6%9E%B6.jpg" class="responsive-img" alt="常用的分析思维模型与方法">
@@ -3726,7 +3739,7 @@ cursor<span class="token punctuation">.</span>fetchall<span class="token punctua
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-03
                         </span>
                         <span class="publish-author">
                             
