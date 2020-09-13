@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangyu756897669.github.io/"/>
-  <updated>2020-08-10T11:30:31.175Z</updated>
+  <updated>2020-08-23T10:48:04.987Z</updated>
   <id>https://zhangyu756897669.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>统计学-概率分布</title>
+    <link href="https://zhangyu756897669.github.io/2020/08/01/tong-ji-xue/"/>
+    <id>https://zhangyu756897669.github.io/2020/08/01/tong-ji-xue/</id>
+    <published>2020-08-01T01:25:00.000Z</published>
+    <updated>2020-08-23T10:48:04.987Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;为什么要学习概率分布&quot;&gt;&lt;a href=&quot;#为什么要学习概率分布&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="统计学" scheme="https://zhangyu756897669.github.io/categories/%E7%BB%9F%E8%AE%A1%E5%AD%A6/"/>
+    
+    
+      <category term="统计学" scheme="https://zhangyu756897669.github.io/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>英语学习</title>
     <link href="https://zhangyu756897669.github.io/2020/07/12/ying-yu-xue-xi/"/>
     <id>https://zhangyu756897669.github.io/2020/07/12/ying-yu-xue-xi/</id>
     <published>2020-07-12T01:25:00.000Z</published>
-    <updated>2020-08-10T11:30:31.175Z</updated>
+    <updated>2020-08-12T15:46:08.605Z</updated>
     
     <summary type="html">
     
@@ -83,7 +110,7 @@
     <link href="https://zhangyu756897669.github.io/2020/06/03/chang-jian-de-fen-xi-mo-xing/"/>
     <id>https://zhangyu756897669.github.io/2020/06/03/chang-jian-de-fen-xi-mo-xing/</id>
     <published>2020-06-02T16:00:00.000Z</published>
-    <updated>2020-08-03T17:58:22.357Z</updated>
+    <updated>2020-09-13T05:02:27.539Z</updated>
     
     <summary type="html">
     
@@ -91,7 +118,7 @@
       
         
         
-          &lt;h1 id=&quot;分析思维模型&quot;&gt;&lt;a href=&quot;#分析思维模型&quot; class=&quot;headerlink&quot; title=&quot;分析思维模型&quot;&gt;&lt;/a&gt;分析思维模型&lt;/h1&gt;&lt;h2 id=&quot;AARRR模型&quot;&gt;&lt;a href=&quot;#AARRR模型&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;分析思维模型&quot;&gt;&lt;a href=&quot;#分析思维模型&quot; class=&quot;headerlink&quot; title=&quot;分析思维模型&quot;&gt;&lt;/a&gt;分析思维模型&lt;/h2&gt;&lt;h3 id=&quot;AARRR模型&quot;&gt;&lt;a href=&quot;#AARRR模型&quot; class=&quot;headerlink&quot;
         
       
     
@@ -137,7 +164,7 @@
     <link href="https://zhangyu756897669.github.io/2020/06/01/ji-neng-python-pandas-ku-xue-xi/"/>
     <id>https://zhangyu756897669.github.io/2020/06/01/ji-neng-python-pandas-ku-xue-xi/</id>
     <published>2020-05-31T16:00:00.000Z</published>
-    <updated>2020-08-10T11:34:57.245Z</updated>
+    <updated>2020-08-12T13:42:43.112Z</updated>
     
     <summary type="html">
     

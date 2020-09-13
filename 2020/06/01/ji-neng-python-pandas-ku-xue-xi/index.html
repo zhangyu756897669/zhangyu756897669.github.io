@@ -734,18 +734,18 @@ df<span class="token punctuation">[</span><span class="token string">'data'</spa
 <span class="token comment" spellcheck="true"># 计数</span>
 df<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>count<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 <ol start="15">
-<li>字符和数值之间的转化<pre class=" language-python"><code class="language-python">int<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 转化成整数</span>
+<li>字符和数值之间的转化</li>
+</ol>
+<pre class=" language-python"><code class="language-python">int<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 转化成整数</span>
 float<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 转化成整数</span>
 str<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 转化成整数</span>
 type<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 转化成整数</span>
 </code></pre>
-</li>
+<ol start="16">
+<li>获取数据分布情况</li>
 </ol>
-<pre><code>
-16.  获取数据分布情况
-
-```python
-data.describe()</code></pre><h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><ol>
+<pre class=" language-python"><code class="language-python">data<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><ol>
 <li><p>删除空值 （dropna函数）</p>
 <p>  <a href="https://blog.csdn.net/yuanxiang01/article/details/78738812" target="_blank" rel="noopener">DataFrame中的空值处理</a></p>
 </li>
@@ -832,7 +832,7 @@ df<span class="token punctuation">.</span>rename <span class="token punctuation"
 <ul>
 <li>重置索引</li>
 </ul>
-<p><img src="https://i.loli.net/2019/12/21/C7cxnGMVfFDeLEX.jpg" alt="微信图片_20191221153932.jpg"></p>
+<p><img src="https://i.loli.net/2019/12/21/C7cxnGMVfFDeLEX.jpg" alt="图1"></p>
 <pre class=" language-python"><code class="language-python">DataFrame<span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span>level<span class="token operator">=</span>None<span class="token punctuation">,</span> drop<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
 
 <span class="token comment" spellcheck="true"># 默认将所有index转化成columns</span>
